@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen font-sans bg-black">
+    <main className="h-[100dvh] w-full overflow-hidden font-sans bg-black">
       <AnimatePresence mode="wait">
         {isLoading && (
           <motion.div
@@ -32,7 +32,7 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <h1 className="text-4xl font-bold tracking-[0.5em] text-white">
+              <h1 className="text-2xl md:text-4xl font-bold tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
                 NOUMAN
               </h1>
             </motion.div>
@@ -41,7 +41,7 @@ export default function Home() {
       </AnimatePresence>
 
       {!isLoading && (
-        <section className="relative h-screen w-full overflow-hidden">
+        <section className="relative h-full w-full overflow-hidden">
           {/* Background Image */}
           <motion.div 
             className="absolute inset-0"
@@ -64,19 +64,19 @@ export default function Home() {
 
           {/* Logo - Top Center */}
           <motion.div 
-            className="absolute top-12 left-0 right-0 z-20 flex justify-center"
+            className="absolute top-8 md:top-12 left-0 right-0 z-20 flex justify-center"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="text-3xl font-light tracking-[0.2em] text-white">NOUMAN</div>
+            <div className="text-xl md:text-3xl font-bold tracking-[0.2em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">NOUMAN</div>
           </motion.div>
 
           {/* Hero Content - Center */}
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4 pb-[15vh]">
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4 pb-[10vh] md:pb-[15vh]">
             <div className="overflow-hidden">
               <motion.h1 
-                className="mb-6 text-5xl font-extralight tracking-widest md:text-7xl lg:text-8xl"
+                className="mb-4 md:mb-6 text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-extralight tracking-widest"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
@@ -85,7 +85,7 @@ export default function Home() {
               </motion.h1>
             </div>
             <motion.p 
-              className="text-sm text-gray-300 tracking-wide font-light opacity-80"
+              className="text-xs md:text-sm text-gray-300 tracking-wide font-light opacity-80"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               transition={{ delay: 1.2, duration: 0.8 }}
@@ -96,12 +96,12 @@ export default function Home() {
 
           {/* Bottom Navigation - Bottom Center */}
           <motion.div 
-            className="absolute bottom-16 left-0 right-0 z-20 flex flex-col items-center gap-8 text-white"
+            className="absolute bottom-8 md:bottom-16 left-0 right-0 z-20 flex flex-col items-center gap-6 md:gap-8 text-white"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.8, ease: "easeOut" }}
           >
-            <nav className="flex items-center gap-12 text-xs font-medium tracking-widest">
+            <nav className="flex items-center gap-6 md:gap-12 text-[10px] md:text-xs font-medium tracking-widest">
               {["HOME", "ABOUT", "EXPLORE", "CONTACT"].map((item, index) => (
                 <a 
                   key={item}
@@ -115,7 +115,7 @@ export default function Home() {
             
             {/* Line below menu */}
             <motion.div 
-              className="h-[1px] w-[30vw] bg-amber-300"
+              className="h-[1px] w-[60vw] md:w-[30vw] bg-amber-300"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 1.6, duration: 1.0, ease: "easeInOut" }}

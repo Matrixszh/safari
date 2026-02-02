@@ -6,7 +6,7 @@ export default function About() {
     <main className="min-h-screen font-sans bg-[#F9F7F2]">
        {/* Navigation - Adapted for light background */}
        <nav className="flex items-center justify-between px-8 py-6 text-black md:px-12">
-          <div className="text-2xl font-bold tracking-widest">NOUMAN</div>
+          <div className="text-2xl font-bold tracking-widest bg-gradient-to-b from-[#b8860b] via-[#d4af37] to-[#8c6d1f] bg-clip-text text-transparent">NOUMAN</div>
           <div className="hidden md:flex items-center gap-8 text-xs font-medium tracking-widest">
             <a href="/" className="hover:opacity-60 transition-opacity">HOME</a>
             <a href="/about" className="hover:opacity-60 transition-opacity font-bold">ABOUT</a>
