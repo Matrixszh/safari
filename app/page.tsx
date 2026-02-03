@@ -12,7 +12,7 @@ export default function Home() {
     { 
       name: "HOME", 
       href: "/", 
-      image: "https://images.unsplash.com/photo-1511497584788-876760111969",
+      image: "/heroport.jpeg",
       desc: "Return to the beginning"
     },
     { 
@@ -60,8 +60,8 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <h1 className="text-2xl md:text-4xl font-bold tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                NOUMAN
+              <h1 className="text-2xl md:text-4xl font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                SYED NOUMAN
               </h1>
             </motion.div>
           </motion.div>
@@ -112,7 +112,7 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="text-xl md:text-2xl font-light tracking-[0.7em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">NOUMAN</div>
+            <div className="text-xl md:text-2xl font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">SYED NOUMAN</div>
           </motion.div>
 
           {/* Hero Content - Center */}
