@@ -6,6 +6,34 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
+  const menuItems = [
+    { 
+      name: "HOME", 
+      href: "/", 
+      image: "https://images.unsplash.com/photo-1511497584788-876760111969",
+      desc: "Return to the beginning"
+    },
+    { 
+      name: "ABOUT", 
+      href: "/about", 
+      image: "https://images.unsplash.com/photo-1500964757637-c85e8a162699",
+      desc: "Learn more about me"
+    },
+    { 
+      name: "EXPLORE", 
+      href: "#", 
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      desc: "Discover my work"
+    },
+    { 
+      name: "CONTACT", 
+      href: "#", 
+      image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e",
+      desc: "Get in touch"
+    },
+  ];
 
   useEffect(() => {
     // Simulate loading time for the splash screen
@@ -116,15 +144,44 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.8, ease: "easeOut" }}
           >
-            <nav className="flex items-center gap-6 md:gap-12 text-[10px] md:text-xs font-medium tracking-widest">
-              {["HOME", "ABOUT", "EXPLORE", "CONTACT"].map((item, index) => (
-                <a 
-                  key={item}
-                  href={item === "HOME" ? "/" : item === "ABOUT" ? "/about" : "#"}
-                  className="transition-all duration-300 hover:text-amber-400 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]"
-                >
-                  {item}
-                </a>
+            <nav className="relative flex items-center gap-6 md:gap-12 text-[10px] md:text-xs font-medium tracking-widest">
+              {menuItems.map((item) => (
+                <div key={item.name} className="relative flex flex-col items-center">
+                  {/* Preview Card */}
+                  <AnimatePresence>
+                    {hoveredItem === item.name && (
+                      <motion.div
+                        className="absolute bottom-full mb-4 w-32 md:w-40 aspect-video rounded-lg overflow-hidden border border-white/20 bg-black/50 backdrop-blur-sm"
+                        initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 5, scale: 0.9 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          className="object-cover opacity-80"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center p-2">
+                          <span className="text-[8px] md:text-[10px] text-white/90 text-center font-light leading-tight">
+                            {item.desc}
+                          </span>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <motion.a 
+                    href={item.href}
+                    className="relative py-2 transition-colors duration-300 hover:text-amber-400 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]"
+                    onMouseEnter={() => setHoveredItem(item.name)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                    whileHover={{ y: -5 }}
+                  >
+                    {item.name}
+                  </motion.a>
+                </div>
               ))}
             </nav>
             
