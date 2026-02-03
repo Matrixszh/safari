@@ -49,13 +49,28 @@ export default function Home() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
           >
-            <Image
-              src="/hero.jpeg"
-              alt="Dark forest background"
-              fill
-              className="object-cover"
-              priority
-            />
+            {/* Desktop Image */}
+            <div className="hidden md:block absolute inset-0">
+              <Image
+                src="/hero.jpeg"
+                alt="Dark forest background desktop"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            
+            {/* Mobile Image */}
+            <div className="block md:hidden absolute inset-0">
+              <Image
+                src="/heroport.jpeg"
+                alt="Dark forest background mobile"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
             {/* Dark overlay to ensure text readability */}
             <div className="absolute inset-0 bg-black/20" />
             {/* Vignette effect */}
