@@ -112,30 +112,11 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="text-xl md:text-3xl font-bold tracking-[0.2em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">NOUMAN</div>
+            <div className="text-xl md:text-2xl font-light tracking-[0.7em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">NOUMAN</div>
           </motion.div>
 
           {/* Hero Content - Center */}
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4 pb-[10vh] md:pb-[15vh]">
-            <div className="overflow-hidden">
-              <motion.h1 
-                className="mb-4 md:mb-6 text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-extralight tracking-widest"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-              >
-                BEYOND THE LENS
-              </motion.h1>
-            </div>
-            <motion.p 
-              className="text-xs md:text-sm text-gray-300 tracking-wide font-light opacity-80"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.8 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-            >
-              description for the above given title
-            </motion.p>
-          </div>
+          
 
           {/* Bottom Navigation - Bottom Center */}
           <motion.div 
