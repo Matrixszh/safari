@@ -112,7 +112,7 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="text-xl md:text-2xl font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">SYED NOUMAN</div>
+            <div className="text-md md:text-lg font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">SYED NOUMAN</div>
           </motion.div>
 
           {/* Hero Content - Center */}
@@ -168,7 +168,7 @@ export default function Home() {
             
             {/* Line below menu */}
             <motion.div 
-              className="h-[1px] w-[60vw] md:w-[30vw] bg-amber-300"
+              className="h-[1px] w-[60vw] md:w-[25vw] bg-amber-300"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 1.6, duration: 1.0, ease: "easeInOut" }}
