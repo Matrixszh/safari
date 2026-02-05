@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const menuItems = [
@@ -22,9 +21,9 @@ export default function Home() {
       desc: "Learn more about me"
     },
     { 
-      name: "EXPLORE", 
-      href: "#", 
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      name: "SAFARI", 
+      href: "/safari", 
+      image: "/safariland.jpeg",
       desc: "Discover my work"
     },
     { 
@@ -36,41 +35,13 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    // Simulate loading time for the splash screen
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    // Clean up
   }, []);
 
   return (
     <main className="h-[100dvh] w-full overflow-hidden font-sans bg-black">
-      <AnimatePresence mode="wait">
-        {isLoading && (
-          <motion.div
-            key="loader"
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-              <h1 className="text-2xl md:text-4xl font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                SYED NOUMAN
-              </h1>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {!isLoading && (
-        <section className="relative h-full w-full overflow-hidden">
-          {/* Background Image */}
+      <section className="relative h-full w-full overflow-hidden">
+        {/* Background Image */}
           <motion.div 
             className="absolute inset-0"
             initial={{ scale: 1.1, opacity: 0 }}
@@ -167,15 +138,14 @@ export default function Home() {
             </nav>
             
             {/* Line below menu */}
-            <motion.div 
-              className="h-[1px] w-[60vw] md:w-[25vw] bg-amber-300"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 1.6, duration: 1.0, ease: "easeInOut" }}
-            />
-          </motion.div>
-        </section>
-      )}
+          <motion.div 
+            className="h-[1px] w-[60vw] md:w-[30vw] bg-amber-300"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 1.6, duration: 1.0, ease: "easeInOut" }}
+          />
+        </motion.div>
+      </section>
     </main>
   );
 }
