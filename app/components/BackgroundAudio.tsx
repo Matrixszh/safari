@@ -7,7 +7,7 @@ import { Volume2, VolumeX } from "lucide-react";
 
 // Audio tracks for different pages
 const TRACKS: Record<string, string> = {
-  "/": "/got.mp3", // Forest/Birds
+  "/": "/sfx1.mp3", // Forest/Birds
   "/about": "https://assets.mixkit.co/active_storage/sfx/209/209-preview.mp3", // Jungle/Nature
   "/safari": "https://assets.mixkit.co/active_storage/sfx/2433/2433-preview.mp3", // Using Forest for Safari too for now
 };
