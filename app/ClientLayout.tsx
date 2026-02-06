@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import BackgroundAudio from "./components/BackgroundAudio";
 
 export default function ClientLayout({
   children,
@@ -43,7 +44,12 @@ export default function ClientLayout({
         )}
       </AnimatePresence>
 
-      {!isLoading && children}
+      {!isLoading && (
+        <>
+          {children}
+          <BackgroundAudio />
+        </>
+      )}
     </>
   );
 }
