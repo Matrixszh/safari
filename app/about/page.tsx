@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "../components/BottomNav";
+import HorizontalScroll from "../components/HorizontalScroll";
 
 export default function About() {
   return (
@@ -61,6 +62,16 @@ export default function About() {
         {/* Bottom Navigation - Bottom Center */}
         <BottomNav />
       </section>
+
+      {/* Story Header & Carousel Section */}
+      <div className="bg-black">
+        <header className="relative w-full grid place-content-center h-[40vh] md:h-[60vh]">
+          <h1 className="text-4xl md:text-7xl font-light tracking-[0.2em] leading-tight text-[#F7E07E] text-center px-4 uppercase">
+            Know the Story
+          </h1>
+        </header>
+        <HorizontalScroll />
+      </div>
 
       {/* Middle Text Section (Moved from Home) */}
       <section className="px-6 py-24 md:py-32">

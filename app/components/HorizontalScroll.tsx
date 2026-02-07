@@ -92,7 +92,7 @@ export default function HorizontalScroll() {
                 {/* Parallax Background Image */}
                 <div className="absolute inset-0 overflow-hidden">
                    <motion.div 
-                     className="relative w-full h-full"
+                     className="relative w-full h-full [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] md:[mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]"
                      initial={{ scale: 1.2 }}
                      animate={{ scale: index === selectedIndex ? 1 : 1.2 }}
                      transition={{ duration: 8, ease: "easeOut" }}
@@ -101,12 +101,20 @@ export default function HorizontalScroll() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover opacity-40 transition-opacity duration-1000"
+                      className="object-cover opacity-60 transition-opacity duration-1000"
                       priority={item.id === 1}
                     />
                    </motion.div>
-                  <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-90" />
-                  <div className="absolute inset-0 bg-black/40" />
+                  {/* Vertical Gradient (Mobile optimized) */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-100" />
+                  
+                  {/* Horizontal Gradient (Desktop optimized) - Adds side fades */}
+                  <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-100" />
+                  
+                  {/* Vignette for smooth blending */}
+                  <div className="hidden md:block absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,1)_100%)] opacity-80" />
+                  
+                  <div className="absolute inset-0 bg-black/20" />
                 </div>
 
                 {/* Content Overlay */}
