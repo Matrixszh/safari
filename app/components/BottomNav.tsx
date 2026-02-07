@@ -96,6 +96,23 @@ export default function BottomNav() {
         animate={{ scaleX: 1 }}
         transition={{ delay: 1.6, duration: 1.0, ease: "easeInOut" }}
       />
+
+      {/* Subtle Scroll Indicator */}
+      <motion.div
+        className="mt-4 flex flex-col items-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.2, duration: 1.0 }}
+      >
+        <span className="text-[8px] tracking-[0.3em] text-white/40 uppercase">Scroll</span>
+        <div className="relative h-12 w-[1px] overflow-hidden bg-white/10">
+          <motion.div
+            className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent to-amber-200/50"
+            animate={{ y: [-24, 48] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+      </motion.div>
     </motion.div>
   );
 }
