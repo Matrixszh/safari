@@ -26,6 +26,13 @@ export default function BottomNav() {
       image: "/safariland.jpeg",
       desc: "Discover my work"
     },
+    
+    { 
+      name: "WORK", 
+      href: "/work", 
+      image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e",
+      desc: "Get in touch"
+    },
     { 
       name: "CONTACT", 
       href: "#", 
