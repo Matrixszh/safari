@@ -49,7 +49,7 @@ const TOPIC_3_IMAGES = [
 export default function Safari() {
   return (
     <ReactLenis root>
-      <main className="w-full font-sans bg-black">
+      <main className="w-full font-sans bg-white">
         {/* Hero Section */}
         <section className="relative h-[100dvh] w-full overflow-hidden">
           {/* Background Image */}
@@ -101,11 +101,11 @@ export default function Safari() {
           <BottomNav />
         </section>
 
-        <div className="bg-black">
+        <div className="bg-white">
           {/* Section Title Header */}
-          <header className="relative w-full grid place-content-center h-[60vh]">
+          <header className="relative w-full grid place-content-center py-12 h-full">
             <h1
-              className="text-4xl md:text-7xl font-light tracking-[0.2em] leading-tight text-[#F7E07E] text-center px-4 uppercase"
+              className="text-4xl md:text-7xl font-light tracking-[0.2em] leading-tight bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent text-center px-4 uppercase drop-shadow-sm"
             >
               Safari with Nouman
             </h1>
@@ -131,15 +131,15 @@ export default function Safari() {
               <ul className="space-y-6 text-left max-w-2xl mx-auto">
                 <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
                   <strong className="text-[#F7E07E] text-xl tracking-wider">In-Depth Tracking</strong>
-                  <span className="text-white/80 text-lg font-light">We use years of field craft to track the region’s key species, focusing primarily on the apex predators.</span>
+                  <span className="text-gray-800 text-lg font-light">We use years of field craft to track the region’s key species, focusing primarily on the apex predators.</span>
                 </li>
                 <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
                   <strong className="text-[#F7E07E] text-xl tracking-wider">Ecosystem Perspective</strong>
-                  <span className="text-white/80 text-lg font-light">We value every layer of the landscape, from raptors to the smaller details that complete a wilderness story.</span>
+                  <span className="text-gray-800 text-lg font-light">We value every layer of the landscape, from raptors to the smaller details that complete a wilderness story.</span>
                 </li>
                 <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
                   <strong className="text-[#F7E07E] text-xl tracking-wider">Strategic Positioning</strong>
-                  <span className="text-white/80 text-lg font-light">Every sighting is approached with light and angles in mind for the optimal shot.</span>
+                  <span className="text-gray-800 text-lg font-light">Every sighting is approached with light and angles in mind for the optimal shot.</span>
                 </li>
               </ul>
             </SafariTopic>
@@ -150,13 +150,13 @@ export default function Safari() {
               images={TOPIC_3_IMAGES}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div className="bg-white/5 p-6 backdrop-blur-sm border border-white/10 rounded-sm">
+                <div className="bg-gray-50 p-6 border border-black/5 rounded-sm shadow-sm">
                   <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Private Vehicles</strong>
-                  <span className="text-white/80 text-lg font-light leading-relaxed">Your safari is custom-tailored to your pace. We don't rush sightings and prioritize quiet areas whenever possible.</span>
+                  <span className="text-gray-800 text-lg font-light leading-relaxed">Your safari is custom-tailored to your pace. We don't rush sightings and prioritize quiet areas whenever possible.</span>
                 </div>
-                <div className="bg-white/5 p-6 backdrop-blur-sm border border-white/10 rounded-sm">
+                <div className="bg-gray-50 p-6 border border-black/5 rounded-sm shadow-sm">
                   <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Authenticity</strong>
-                  <span className="text-white/80 text-lg font-light leading-relaxed">No guarantees, just dedicated tracking and a commitment to being in the right place when the moment happens.</span>
+                  <span className="text-gray-800 text-lg font-light leading-relaxed">No guarantees, just dedicated tracking and a commitment to being in the right place when the moment happens.</span>
                 </div>
               </div>
             </SafariTopic>

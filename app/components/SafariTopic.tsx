@@ -51,7 +51,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
   };
 
   return (
-    <section className="w-full bg-black py-24 border-b border-white/10 last:border-0">
+    <section className="w-full bg-white/80 py-12 border-b border-y-amber-400 last:border-0">
       <div className="max-w-7xl mx-auto px-4 md:px-24">
         
         {/* Content Section */}
@@ -63,10 +63,10 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl mx-auto"
           >
-            <h2 className="text-4xl md:text-7xl font-thin mb-8 tracking-[0.1em] text-[#F7E07E] uppercase">
+            <h2 className="text-4xl md:text-5xl font-thin mb-8 tracking-[0.1em] text-black uppercase">
               {title}
             </h2>
-            <div className="text-white/80 text-lg md:text-2xl font-light leading-relaxed">
+            <div className="text-gray-600 text-lg md:text-xl font-light leading-relaxed">
               {children}
             </div>
           </motion.div>
@@ -80,7 +80,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="overflow-hidden rounded-sm border border-white/10 bg-white/5" ref={emblaRef}>
+          <div className="overflow-hidden rounded-sm border border-black/10 bg-gray-50" ref={emblaRef}>
             <div className="flex">
               {images.map((item, index) => (
                 <div 
@@ -95,9 +95,6 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
                       className={`object-cover transition-all duration-500 ${activeSlide === index ? 'brightness-50 blur-[2px]' : 'group-hover:brightness-50 group-hover:blur-[2px]'}`}
                     />
                    
-                   {/* Gentle overlay for better integration with black bg */}
-                   <div className="absolute inset-0 bg-black/10 pointer-events-none" />
-
                    {/* Camera Settings Overlay */}
                    <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${activeSlide === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                         <div className="bg-black/60 backdrop-blur-md border border-[#F7E07E]/30 p-6 md:p-8 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -134,7 +131,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
                 key={index}
                 onClick={() => emblaApi && emblaApi.scrollTo(index)}
                 className={`group relative h-1 transition-all duration-500 ${
-                  index === selectedIndex ? "w-16 bg-[#F7E07E]" : "w-8 bg-white/20 hover:bg-white/40"
+                  index === selectedIndex ? "w-16 bg-[#F7E07E]" : "w-8 bg-black/20 hover:bg-black/40"
                 }`}
               />
             ))}

@@ -129,7 +129,7 @@ export default function HorizontalScroll() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="max-w-5xl"
                       >
-                        <h2 className="text-4xl md:text-8xl font-thin mb-8 md:mb-16 tracking-[0.1em] text-white uppercase mix-blend-overlay">
+                        <h2 className="text-4xl md:text-8xl font-thin text-amber-400 mb-8 md:mb-16 tracking-[0.1em] text-white uppercase mix-blend-overlay">
                           {item.title}
                         </h2>
                         
