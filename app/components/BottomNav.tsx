@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-export default function BottomNav() {
+export default function BottomNav({ openDirection = "up" }: { openDirection?: "up" | "down" }) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const menuItems = [
@@ -55,10 +55,10 @@ export default function BottomNav() {
             <AnimatePresence>
               {hoveredItem === item.name && (
                 <motion.div
-                  className="absolute bottom-full mb-4 w-32 md:w-40 aspect-video rounded-lg overflow-hidden border border-white/20 bg-black/50 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                  className={`absolute ${openDirection === 'up' ? 'bottom-full mb-4' : 'top-full mt-4'} w-32 md:w-40 aspect-video rounded-lg overflow-hidden border border-white/20 bg-black/50 backdrop-blur-sm`}
+                  initial={{ opacity: 0, y: openDirection === 'up' ? 10 : -10, scale: 0.9 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 5, scale: 0.9 }}
+                  exit={{ opacity: 0, y: openDirection === 'up' ? 5 : -5, scale: 0.9 }}
                   transition={{ duration: 0.2 }}
                 >
                   <Image

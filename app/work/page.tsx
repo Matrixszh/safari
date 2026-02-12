@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
 import BottomNav from "../components/BottomNav";
@@ -12,32 +12,45 @@ const chapters = [
     id: "I",
     title: "Northern Giants",
     description: "Majestic rulers of the North. Silent wanderers of the misty forests, carrying the weight of ancient winters.",
-    image: "/hero.jpeg" // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
+    image: "/Chapter1.JPG" // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
   },
   {
     id: "II",
     title: "The Terai Throne",
     description: "A daughter of Kishanpur’s most iconic lineage, photographed pushing into uncharted territory. Perched on a sandhill like a makeshift throne, she isn’t just resting, she is claiming her future.",
-    image: "https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=3022&auto=format&fit=crop" // Tiger on hill/rock
+    image: "/Chapter2.JPG" // Tiger on hill/rock
   },
   {
     id: "III",
     title: "Kin and Kingdom",
     description: "Survival in the emerald deep. A study of the bloodline. Where the future of the Shivalik Hills finds its footing.",
-    image: "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?q=80&w=2940&auto=format&fit=crop" // Tiger cubs or family
+    image: "/Chapter3.JPG" // Tiger cubs or family
   },
   {
     id: "IV",
     title: "The Spotted Ghost",
     description: "A game of shadows. Owner of the void. An elusive presence, brought to light.",
-    image: "https://images.unsplash.com/photo-1456926631375-92c8ce872def?q=80&w=2940&auto=format&fit=crop" // Leopard
+    image: "/Chapter4.JPG", // Default/fallback
+    images: [
+      "/Chapter4.JPG",
+      "/Chapter4.4.JPG",
+      "/Chapter4.2.JPG",
+      "/Chapter4.3.JPG"
+    ]
   },
   {
     id: "V",
     title: "Delicate Wings, Endless Sky",
     description: "Precision frames of India’s most vibrant life",
-    image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=2938&auto=format&fit=crop" // Bird
+    image: "/Chapter5.JPG" // Bird
+  },
+  {
+    id: "VI",
+    title: "Delicate Wings, Endless Sky",
+    description: "Precision frames of India’s most vibrant life",
+    image: "/Chapter6.JPG" // Bird
   }
+
 ];
 
 export default function WorksPage() {
@@ -121,56 +134,97 @@ export default function WorksPage() {
 
 function ChapterItem({ chapter, index }: { chapter: any; index: number }) {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const isEven = index % 2 === 0;
+  // Only run slideshow logic if chapter has multiple images
+  useEffect(() => {
+    if (!chapter.images || chapter.images.length <= 1) return;
 
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % chapter.images.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [chapter.images]);
+  
   return (
     <motion.div 
       ref={ref}
-      style={{ opacity }}
-      className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 min-h-[70vh]`}
+      className="flex flex-col items-center gap-12 min-h-[70vh]"
     >
-      {/* Image Side */}
-      <div className="w-full md:w-3/5 h-[50vh] md:h-[80vh] relative overflow-hidden rounded-sm group">
-        <motion.div style={{ y }} className="absolute inset-0 h-[120%] w-full -top-[10%]">
-          <Image
-            src={chapter.image}
-            alt={chapter.title}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 60vw"
-          />
-        </motion.div>
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-      </div>
-
       {/* Text Side */}
-      <div className="w-full md:w-2/5 space-y-8 text-center md:text-left relative">
+      <div className="w-full max-w-4xl mx-auto space-y-8 text-center relative px-4">
         <motion.div
-          initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="block text-8xl md:text-9xl font-serif text-[#222] absolute -top-20 -left-10 md:-left-20 -z-10 select-none">
+          <span className="block text-8xl md:text-9xl font-serif text-[#222] absolute -top-16 left-1/2 -translate-x-1/2 -z-10 select-none">
             {chapter.id}
           </span>
           <h2 className="text-4xl md:text-6xl font-serif text-[#F7E07E] mb-6">
             <span className="text-sm tracking-widest text-gray-500 block mb-2 font-sans uppercase">Chapter {chapter.id}</span>
             {chapter.title}
           </h2>
-          <div className="h-1 w-24 bg-[#F7E07E] mb-8 mx-auto md:mx-0" />
+          <div className="h-1 w-24 bg-[#F7E07E] mb-8 mx-auto" />
           <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-300">
             {chapter.description}
           </p>
         </motion.div>
+      </div>
+
+      {/* Image Side - Full Width */}
+      <div className="w-[100vw] h-[60vh] md:h-[100vh] relative overflow-hidden group">
+        <AnimatePresence mode="wait">
+          {chapter.images && chapter.images.length > 1 ? (
+            <motion.div
+              key={currentSlide}
+              className="absolute inset-0 w-full h-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <Image
+                src={chapter.images[currentSlide]}
+                alt={`${chapter.title} - Slide ${currentSlide + 1}`}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="100vw"
+              />
+            </motion.div>
+          ) : (
+            <motion.div className="absolute inset-0 w-full h-full">
+              <Image
+                src={chapter.image}
+                alt={chapter.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="100vw"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        {/* Dots Indicator for Slideshow */}
+        {chapter.images && chapter.images.length > 1 && (
+          <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-10">
+            {chapter.images.map((_: any, idx: number) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
+        
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
       </div>
     </motion.div>
   );

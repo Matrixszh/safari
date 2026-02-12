@@ -51,7 +51,12 @@ export default function Safari() {
     <ReactLenis root>
       <main className="w-full font-sans bg-black">
         {/* Hero Section */}
-        
+        <section className="relative w-full h-auto bg-black">
+          {/* Bottom Navigation */}
+          <div className="relative h-[20vh]">
+             <BottomNav openDirection="down" />
+          </div>
+        </section>
         <div className="bg-white">
           {/* Section Title Header */}
           <header className="relative w-full grid place-content-center pt-12 h-full">

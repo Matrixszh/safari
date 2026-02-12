@@ -1,51 +1,32 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "../components/BottomNav";
 import FramerMoveableThumbnails from "../components/MovableCarousal";
 import ButtonCreativeRight from "../components/ButtonF";
 
+const SLIDESHOW_IMAGES = [
+  "/About.JPG",
+  "/About2.JPG",
+  "/About3.JPG"
+];
+
 export default function About() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SLIDESHOW_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <main className="min-h-screen font-sans bg-white">
       {/* Hero Section */}
-      <section className="relative h-[100dvh] w-full overflow-hidden bg-black">
-        {/* Background Image */}
-        <motion.div 
-          className="absolute inset-0"
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        >
-          {/* Desktop Image */}
-          <div className="hidden md:block absolute inset-0">
-            <Image
-              src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4"
-              alt="Photographer background desktop"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          
-          {/* Mobile Image */}
-          <div className="block md:hidden absolute inset-0">
-            <Image
-              src="https://images.unsplash.com/photo-1552168324-d612d77725e3"
-              alt="Photographer background mobile"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          {/* Dark overlay */}
-          <div className="absolute inset-0 " />
-          {/* Vignette effect */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
-        </motion.div>
-
+      <section className="relative w-full h-auto bg-black">
         {/* Logo - Top Center */}
         <motion.div 
           className="absolute top-8 md:top-12 left-0 right-0 z-20 flex justify-center"
@@ -53,21 +34,12 @@ export default function About() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
-            <div className="relative w-48 h-12 md:w-64 md:h-16">
-              <Image
-                src="/logo.png"
-                alt="Syed Nouman"
-                fill
-                className="object-contain drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
-                priority
-              />
-            </div>
         </motion.div>
 
-        {/* Hero Content - Center */}
-        
-        {/* Bottom Navigation - Bottom Center */}
-        <BottomNav />
+        {/* Bottom Navigation */}
+        <div className="relative h-[20vh]">
+            <BottomNav openDirection="down" />
+        </div>
       </section>
 
       {/* Story Header & Carousel Section */}
@@ -77,15 +49,42 @@ export default function About() {
         {/* Redesigned About Section - Image Left, Text Right */}
         <div className="pt-20 max-w-[1400px] mx-auto px-6 pb-24 md:pb-32">
           <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
-            {/* Left: Image */}
-            <div className="w-full md:w-1/2 relative h-[600px] md:h-[800px]">
-              <div className="absolute inset-0 bg-gray-100 rounded-lg overflow-hidden">
-                <Image
-                  src="/nouman.JPG"
-                  alt="Syed Nouman Portrait"
-                  fill
-                  className="object-cover"
-                />
+            {/* Left: Image Slideshow */}
+            <div className="w-full md:w-1/2 relative h-[600px] md:h-[700px]">
+              <div className="absolute inset-0 bg-black rounded-lg overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                  >
+                    <Image
+                      src={SLIDESHOW_IMAGES[currentSlide]}
+                      alt="Syed Nouman Portrait"
+                      fill
+                      className="object-cover"
+                      priority={true}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                
+                {/* Dots Indicator */}
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-10">
+                  {SLIDESHOW_IMAGES.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        idx === currentSlide ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
