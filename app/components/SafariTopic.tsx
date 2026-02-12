@@ -55,7 +55,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
       <div className="max-w-7xl mx-auto px-4 md:px-24">
         
         {/* Content Section */}
-        <div className="mb-16 text-center">
+        <div className="mb-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -63,7 +63,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-thin mb-8 tracking-[0.1em] text-black uppercase">
+            <h2 className="text-3xl md:text-5xl font-thin mb-4 tracking-[0.1em] text-black uppercase">
               {title}
             </h2>
             <div className="text-gray-600 text-lg md:text-xl font-light leading-relaxed">
