@@ -49,7 +49,7 @@ const TOPIC_3_IMAGES = [
 export default function Safari() {
   return (
     <ReactLenis root>
-      <main className="w-full font-sans bg-white">
+      <main className="w-full font-sans bg-black">
         {/* Hero Section */}
         <section className="relative h-[100dvh] w-full overflow-hidden">
           {/* Background Image */}
@@ -94,7 +94,15 @@ export default function Safari() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="text-md md:text-lg font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">SYED NOUMAN</div>
+            <div className="relative w-48 h-12 md:w-64 md:h-16">
+              <Image
+                src="/logo.png"
+                alt="Syed Nouman"
+                fill
+                className="object-contain drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* Bottom Navigation - Bottom Center */}
@@ -161,6 +169,145 @@ export default function Safari() {
               </div>
             </SafariTopic>
           </div>
+
+          {/* Strategic Wins Section */}
+          <section className="py-24 bg-white text-gray-900 px-4 md:px-12 border-t border-black/5">
+            <header className="mb-20 text-center">
+              <h2 className="text-4xl md:text-6xl font-serif mb-6 tracking-wide bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-sm">Strategic Wins</h2>
+              <div className="h-0.5 w-24 bg-[#D4AF37] mx-auto" />
+            </header>
+
+            <div className="max-w-7xl mx-auto space-y-32">
+              {/* Case Study 1: The Solitary Female */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <h3 className="text-2xl md:text-3xl font-light text-black border-l-2 border-[#D4AF37] pl-6">
+                    The Solitary Female
+                  </h3>
+                  <div className="space-y-6 text-lg font-light text-gray-600 leading-relaxed">
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Scenario</strong>
+                      <p>A solitary female tiger moving through dense cover in the early morning mist.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
+                      <p>Rather than tailing her closely, we gave her space and time, predicting her trajectory toward a specific opening on the road. Knowing her likely walking direction, we chose to reverse out and hold a wide, clean angle 20 minutes before she arrived.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
+                      <p>Because we were the only Gypsy and remained quiet, she emerged onto the path with total confidence. We were rewarded with a perfectly centered portrait, a clean shot in the signature blue Terai region.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
+                  <Image 
+                    src="/safariland.jpeg" 
+                    alt="Solitary Female Tiger" 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500" />
+                </div>
+              </div>
+
+              {/* Case Study 2: Scissor and Cubs */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+                <div className="order-1 md:order-2 space-y-8">
+                  <h3 className="text-2xl md:text-3xl font-light text-black border-l-2 border-[#D4AF37] pl-6">
+                    Scissor & Her Cubs
+                  </h3>
+                  <div className="space-y-6 text-lg font-light text-gray-600 leading-relaxed">
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Scenario</strong>
+                      <p>Reports from a morning safari suggested a mother and her cubs were moving through a specific territory.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
+                      <p>We chose a specific route to intercept them head-on. This was only possible by anticipating their direction of movement. A calculation rooted in a deep understanding of the territory and knowing this mother named ‘Scissor’ since she was a cub herself.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
+                      <p>We were the first Gypsy on the scene, allowing us to capture clean images while others were still trailing behind us. This uncompromised positioning gave us the time and stillness to make beautiful, printable family portraits.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="order-2 md:order-1 relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
+                  <Image 
+                    src="/safariport.jpeg" 
+                    alt="Scissor and Cubs" 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500" />
+                </div>
+              </div>
+
+              {/* Case Study 3: The Spotted Ghost */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <h3 className="text-2xl md:text-3xl font-light text-black border-l-2 border-[#D4AF37] pl-6">
+                    The Spotted Ghost
+                  </h3>
+                  <div className="space-y-6 text-lg font-light text-gray-600 leading-relaxed">
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Scenario</strong>
+                      <p>A mother leopard and her cubs were active near the road. As the mother moved, the line of vehicles moved with her, creating a chaotic "chase" dynamic.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
+                      <p>We stayed back. By observing the play rhythm of the cubs, I predicted they would look for a higher vantage point to keep track of their mother. We positioned the Gypsy at a specific angle near a leaning branch, away from the crowd.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
+                      <p>While the other vehicles were stuck in a bottleneck behind us, we were perfectly aligned. The cub climbed almost where we anticipated, giving us an unobstructed, eye-level portrait of the "Spotted Ghost" in the making.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
+                  <Image 
+                    src="/safariland.jpeg" 
+                    alt="Leopard Cub on Branch" 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500" />
+                </div>
+              </div>
+
+              {/* Case Study 4: The Serpentine Path */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+                <div className="order-1 md:order-2 space-y-8">
+                  <h3 className="text-2xl md:text-3xl font-light text-black border-l-2 border-[#D4AF37] pl-6">
+                    The Serpentine Path
+                  </h3>
+                  <div className="space-y-6 text-lg font-light text-gray-600 leading-relaxed">
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Scenario</strong>
+                      <p>It was minutes before sunset—the final light of the day. Most were heading toward the exit, but the forest was speaking through sharp Langur alarm calls echoing from a specific thicket.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
+                      <p>While others ignored the calls to make the gate on time, we knew exactly which bend to hold. I positioned the Gypsy to not just catch the tiger, but to frame the serpentine curve of the road itself.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
+                      <p>We didn't just get a tiger; we got a story of the journey. He stepped onto the asphalt exactly where the road coiled, looking back to acknowledge our presence. It was a reminder: You don't walk your road twice; do it right.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="order-2 md:order-1 relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
+                  <Image 
+                    src="/safariport.jpeg" 
+                    alt="Tiger on Serpentine Road" 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500" />
+                </div>
+              </div>
+
+            </div>
+          </section>
         </div>
       </main>
     </ReactLenis>

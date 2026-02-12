@@ -75,7 +75,15 @@ export default function WorksPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="text-md md:text-lg font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">SYED NOUMAN</div>
+            <div className="relative w-48 h-12 md:w-64 md:h-16">
+              <Image
+                src="/logo.png"
+                alt="Syed Nouman"
+                fill
+                className="object-contain drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* Bottom Navigation */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import BackgroundAudio from "./components/BackgroundAudio";
 import ScrollToTop from "./components/ScrollToTop";
@@ -38,9 +39,15 @@ export default function ClientLayout({
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <h1 className="text-2xl md:text-4xl font-extralight tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[#8C6D1F] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                SYED NOUMAN
-              </h1>
+              <div className="relative w-60 h-60 md:w-150 md:h-150">
+                <Image
+                  src="/logo.png"
+                  alt="Syed Nouman"
+                  fill
+                  className="object-contain drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
+                  priority
+                />
+              </div>
             </motion.div>
           </motion.div>
         )}

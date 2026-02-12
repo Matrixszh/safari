@@ -53,7 +53,15 @@ export default function About() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
-            <div className="text-md md:text-lg font-light tracking-[0.5em] bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">SYED NOUMAN</div>
+            <div className="relative w-48 h-12 md:w-64 md:h-16">
+              <Image
+                src="/logo.png"
+                alt="Syed Nouman"
+                fill
+                className="object-contain drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
+                priority
+              />
+            </div>
         </motion.div>
 
         {/* Hero Content - Center */}
@@ -73,7 +81,7 @@ export default function About() {
             <div className="w-full md:w-1/2 relative h-[600px] md:h-[800px]">
               <div className="absolute inset-0 bg-gray-100 rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1552168324-d612d77725e3"
+                  src="/nouman.JPG"
                   alt="Syed Nouman Portrait"
                   fill
                   className="object-cover"
