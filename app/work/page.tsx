@@ -12,7 +12,7 @@ const chapters = [
     id: "I",
     title: "Northern Giants",
     description: "Majestic rulers of the North. Silent wanderers of the misty forests, carrying the weight of ancient winters.",
-    image: "https://images.unsplash.com/photo-1599596395377-50a30b422473?q=80&w=2940&auto=format&fit=crop" // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
+    image: "/hero.jpeg" // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
   },
   {
     id: "II",
@@ -55,7 +55,7 @@ export default function WorksPage() {
           >
             <div className="absolute inset-0">
               <Image
-                src="https://images.unsplash.com/photo-1599596395377-50a30b422473?q=80&w=2940&auto=format&fit=crop"
+                src="/hero.jpeg"
                 alt="Northern Giants Hero"
                 fill
                 className="object-cover"
