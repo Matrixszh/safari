@@ -9,38 +9,65 @@ import SafariTopic from "../components/SafariTopic";
 // Mock Data for Images
 const TOPIC_1_IMAGES = [
   { 
-    src: "/safariland.jpeg", 
+    src: "/SafariLand.JPG", 
     alt: "Lion in Grass",
     settings: { iso: "400", aperture: "f/2.8", shutter: "1/1000s" }
-  },
-  { 
-    src: "/safariport.jpeg", 
-    alt: "Leopard Portrait",
-    settings: { iso: "800", aperture: "f/4.0", shutter: "1/500s" }
   }
 ];
 
 const TOPIC_2_IMAGES = [
   { 
-    src: "/safariport.jpeg", 
-    alt: "Tracker Looking",
+    src: "/Safari2.JPG", 
+    alt: "Safari Moment 2",
     settings: { iso: "200", aperture: "f/5.6", shutter: "1/2000s" }
   },
+  
   { 
-    src: "/safariland.jpeg", 
-    alt: "Vehicle Approach",
-    settings: { iso: "100", aperture: "f/8.0", shutter: "1/250s" }
+    src: "/Safari2.1.JPG", 
+    alt: "Safari Moment 6",
+    settings: { iso: "320", aperture: "f/5.6", shutter: "1/1600s" }
+  },
+  
+  { 
+    src: "/Safari2.2.JPG", 
+    alt: "Safari Moment 6",
+    settings: { iso: "320", aperture: "f/5.6", shutter: "1/1600s" }
+  },
+  { 
+    src: "/Safari2.4.JPG", 
+    alt: "Safari Moment 4",
+    settings: { iso: "100", aperture: "f/8.0", shutter: "1/500s" }
+  },
+  { 
+    src: "/Safari2.5.JPG", 
+    alt: "Safari Moment 5",
+    settings: { iso: "800", aperture: "f/2.8", shutter: "1/1250s" }
+  },
+  { 
+    src: "/Safari2.6.JPG", 
+    alt: "Safari Moment 6",
+    settings: { iso: "320", aperture: "f/5.6", shutter: "1/1600s" }
+  },
+  { 
+    src: "/Safari2.7.JPG", 
+    alt: "Safari Moment 7",
+    settings: { iso: "160", aperture: "f/6.3", shutter: "1/800s" }
   }
 ];
 
 const TOPIC_3_IMAGES = [
   { 
-    src: "/safariland.jpeg", 
+    src: "/Unused.JPG", 
     alt: "Sunrise Savannah",
     settings: { iso: "640", aperture: "f/4.0", shutter: "1/800s" }
   },
   { 
-    src: "/safariport.jpeg", 
+    src: "/Unused1.JPG", 
+    alt: "Sunrise Savannah",
+    settings: { iso: "640", aperture: "f/4.0", shutter: "1/800s" }
+  },
+  { 
+    src: "/Unused6.JPG", 
     alt: "Elephant Herd",
     settings: { iso: "500", aperture: "f/5.6", shutter: "1/1200s" }
   }
@@ -149,7 +176,7 @@ export default function Safari() {
                 </div>
                 <div className="relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
-                    src="/safariland.jpeg" 
+                    src="/Strategic1.JPG" 
                     alt="Solitary Female Tiger" 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -181,7 +208,7 @@ export default function Safari() {
                 </div>
                 <div className="order-2 md:order-1 relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
-                    src="/safariport.jpeg" 
+                    src="/Strategic2.JPG" 
                     alt="Scissor and Cubs" 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -213,7 +240,7 @@ export default function Safari() {
                 </div>
                 <div className="relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
-                    src="/safariland.jpeg" 
+                    src="/Strategic3.JPG" 
                     alt="Leopard Cub on Branch" 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -245,7 +272,7 @@ export default function Safari() {
                 </div>
                 <div className="order-2 md:order-1 relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
-                    src="/safariport.jpeg" 
+                    src="/Strategic4.JPG" 
                     alt="Tiger on Serpentine Road" 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-105" 

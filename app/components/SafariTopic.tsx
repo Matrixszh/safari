@@ -85,7 +85,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
               {images.map((item, index) => (
                 <div 
                     key={index} 
-                    className="relative flex-[0_0_100%] min-w-0 aspect-[16/9] md:aspect-[21/9] group cursor-pointer"
+                    className="relative flex-[0_0_100%] min-w-0 aspect-[16/9] md:aspect-[15/9] group cursor-pointer"
                     onClick={() => handleSlideClick(index)}
                 >
                    <Image
