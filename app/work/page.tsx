@@ -10,8 +10,8 @@ import BottomNav from "../components/BottomNav";
 const chapters = [
   {
     id: "I",
-    title: "Northern Giants",
-    description: "Majestic rulers of the North. Silent wanderers of the misty forests, carrying the weight of ancient winters.",
+    title: "Northern Cross Giants",
+    description: "At fifteen months, the northern hybrid already towers over the queen who raised him. A testament to Siberian iron flowing through a Bengal heart amidst the Terai plains.",
     image: "/Chapter1.JPG", // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
     heightClass: "h-[100vh] md:h-[100vh]",
     widthClass: "w-[100vw] md:w-[80vw]"
@@ -34,8 +34,8 @@ const chapters = [
   },
   {
     id: "IV",
-    title: "The Spotted Ghost",
-    description: "A game of shadows. Owner of the void. An elusive presence, brought to light.",
+    title: "Delicate Wings, Endless Sky",
+    description: "Precision frames of India’s most vibrant life.A flash of pigment in the canopy’s shade; The vibrant brushstrokes that time has made.",
     image: "/Chapter4.JPG", // Default/fallback
     heightClass: "h-[60vh] md:h-[100vh]",
     widthClass: "w-[100vw] md:w-[40vw]",
@@ -48,16 +48,16 @@ const chapters = [
   },
   {
     id: "V",
-    title: "Delicate Wings, Endless Sky",
-    description: "Precision frames of India’s most vibrant life",
+    title: "The Blue Gray Hour",
+    description: "An apex so absolute, she’s concealed in air.",
     image: "/Chapter5.JPG", // Bird
     heightClass: "h-[55vh] md:h-[75vh]",
     widthClass: "w-[100vw] md:w-[85vw]"
   },
   {
     id: "VI",
-    title: "Delicate Wings, Endless Sky",
-    description: "Precision frames of India’s most vibrant life",
+    title: " The Sylvan Veil",
+    description: "Only like a quiet painting.",
     image: "/Chapter6.JPG", // Bird
     heightClass: "h-[55vh] md:h-[75vh]",
     widthClass: "w-[100vw] md:w-[85vw]"

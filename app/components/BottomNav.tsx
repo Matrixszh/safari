@@ -17,7 +17,7 @@ export default function BottomNav({ openDirection = "up" }: { openDirection?: "u
     { 
       name: "ABOUT", 
       href: "/about", 
-      image: "https://images.unsplash.com/photo-1500964757637-c85e8a162699",
+      image: "/About3.JPG",
       desc: "Learn more about me"
     },
     { 
@@ -30,13 +30,13 @@ export default function BottomNav({ openDirection = "up" }: { openDirection?: "u
     { 
       name: "WORK", 
       href: "/work", 
-      image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e",
+      image: "/workshero.JPG",
       desc: "Get in touch"
     },
     { 
       name: "CONTACT", 
-      href: "#", 
-      image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e",
+      href: "/contact", 
+      image: "/Chapter1.JPG",
       desc: "Get in touch"
     },
   ];
