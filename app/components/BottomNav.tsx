@@ -4,7 +4,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-export default function BottomNav({ openDirection = "up" }: { openDirection?: "up" | "down" }) {
+interface BottomNavProps {
+  openDirection?: "up" | "down";
+  variant?: "default" | "header";
+}
+
+export default function BottomNav({ openDirection = "up", variant = "default" }: BottomNavProps) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const menuItems = [
@@ -20,8 +25,6 @@ export default function BottomNav({ openDirection = "up" }: { openDirection?: "u
       image: "/About3.JPG",
       desc: "Learn more about me"
     },
-    
-    
     { 
       name: "WORKS", 
       href: "/work", 
@@ -41,6 +44,70 @@ export default function BottomNav({ openDirection = "up" }: { openDirection?: "u
       desc: "Get in touch"
     },
   ];
+
+  if (variant === "header") {
+    return (
+      <motion.div 
+        className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-8 text-white w-full h-full"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        {/* Logo Left */}
+        <div className="relative w-32 h-8 md:w-48 md:h-12 shrink-0">
+           <Image 
+             src="/logo.png" 
+             alt="Syed Nouman" 
+             fill 
+             className="object-contain" 
+             priority
+           />
+        </div>
+
+        {/* Nav Right */}
+        <nav className="relative flex items-center gap-6 md:gap-8 text-[10px] md:text-xs font-medium tracking-widest shrink-0">
+          {menuItems.map((item) => (
+            <div key={item.name} className="relative flex flex-col items-center">
+              {/* Preview Card */}
+              <AnimatePresence>
+                {hoveredItem === item.name && (
+                  <motion.div
+                    className={`absolute ${openDirection === 'up' ? 'bottom-full mb-4' : 'top-full mt-4'} right-0 w-32 md:w-40 aspect-video rounded-lg overflow-hidden border border-white/20 bg-black/50 backdrop-blur-sm z-50`}
+                    initial={{ opacity: 0, y: openDirection === 'up' ? 10 : -10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: openDirection === 'up' ? 5 : -5, scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center p-2">
+                      <span className="text-[8px] md:text-[10px] text-white/90 text-center font-light leading-tight">
+                        {item.desc}
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <motion.a 
+                href={item.href}
+                className="relative py-2 transition-colors duration-300 hover:text-amber-400 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]"
+                onMouseEnter={() => setHoveredItem(item.name)}
+                onMouseLeave={() => setHoveredItem(null)}
+                whileHover={{ y: -2 }}
+              >
+                {item.name}
+              </motion.a>
+            </div>
+          ))}
+        </nav>
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div 

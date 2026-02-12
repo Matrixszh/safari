@@ -67,7 +67,7 @@ export default function Safari() {
         <section className="relative w-full h-auto bg-black">
           {/* Bottom Navigation */}
           <div className="relative h-[20vh]">
-             <BottomNav openDirection="down" />
+             <BottomNav openDirection="down" variant="header" />
           </div>
         </section>
         <div className="bg-white">

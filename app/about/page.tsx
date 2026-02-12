@@ -27,18 +27,9 @@ export default function About() {
     <main className="min-h-screen font-sans bg-white">
       {/* Hero Section */}
       <section className="relative w-full h-auto bg-black">
-        {/* Logo - Top Center */}
-        <motion.div 
-          className="absolute top-8 md:top-12 left-0 right-0 z-20 flex justify-center"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-        >
-        </motion.div>
-
         {/* Bottom Navigation */}
         <div className="relative h-[20vh]">
-            <BottomNav openDirection="down" />
+            <BottomNav openDirection="down" variant="header" />
         </div>
       </section>
 
