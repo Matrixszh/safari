@@ -8,11 +8,13 @@ import { Volume2, VolumeX } from "lucide-react";
 // Audio tracks for different pages
 const TRACKS: Record<string, string> = {
   "/": "/bgmusic.mp3", // Forest/Birds
-  "/about": "https://assets.mixkit.co/active_storage/sfx/209/209-preview.mp3", // Jungle/Nature
-  "/safari": "https://assets.mixkit.co/active_storage/sfx/2433/2433-preview.mp3", // Using Forest for Safari too for now
+  "/about": "/bgmusic.mp3", // Jungle/Nature
+  "/safari": "/bgmusic.mp3",
+  "/work": "/bgmusic.mp3",
+  "/contact": "/bgmusic.mp3", // Using Forest for Safari too for now
 };
 
-const DEFAULT_TRACK = "https://assets.mixkit.co/active_storage/sfx/2433/2433-preview.mp3";
+const DEFAULT_TRACK = "/bgmusic.mp3";
 const MAX_VOLUME = 0.5;
 const FADE_DURATION = 1500; // 1.5 seconds
 const TOTAL_DURATION = 15000; // 5 seconds total play time
