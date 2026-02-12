@@ -116,30 +116,6 @@ By focusing on transient elements and natural behaviour, Syed captures rare, int
         </div>
       </div>
 
-      {/* Middle Text Section (Moved from Home) */}
-      <section className="px-6 py-24 md:py-32 bg-white">
-        <div className="items-center mx-auto max-w-4xl text-center">
-          <h2 className="text-2xl md:text-4xl leading-relaxed text-gray-800 font-light mb-12">
-            Finding a home or renting a car isn&apos;t just about{" "}
-            <span className="font-bold text-[#F7E07E]">keys and contracts</span>
-            —it&apos;s about setting the scene for all those{" "}
-            <span className="font-serif italic text-3xl md:text-5xl text-black">unforgettable moments</span>{" "}
-            with family and friends. Let&apos;s get you the perfect place (or wheels)
-            to make memories happen.
-          </h2>
-        
-          <div className="flex justify-center">
-            <ButtonCreativeRight label="Contact" href="/work" />
-          </div>
-            
-        </div>
-        
-      </section>
-
-      {/* Bottom Content Section (Moved from Home) */}
-      <section className="">
-        <FramerMoveableThumbnails/>
-      </section>
     </main>
   );
 }

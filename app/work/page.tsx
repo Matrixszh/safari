@@ -12,25 +12,33 @@ const chapters = [
     id: "I",
     title: "Northern Giants",
     description: "Majestic rulers of the North. Silent wanderers of the misty forests, carrying the weight of ancient winters.",
-    image: "/Chapter1.JPG" // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
+    image: "/Chapter1.JPG", // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
+    heightClass: "h-[100vh] md:h-[100vh]",
+    widthClass: "w-[100vw] md:w-[80vw]"
   },
   {
     id: "II",
     title: "The Terai Throne",
     description: "A daughter of Kishanpur’s most iconic lineage, photographed pushing into uncharted territory. Perched on a sandhill like a makeshift throne, she isn’t just resting, she is claiming her future.",
-    image: "/Chapter2.JPG" // Tiger on hill/rock
+    image: "/Chapter2.JPG", // Tiger on hill/rock
+    heightClass: "h-[50vh] md:h-[100vh]",
+    widthClass: "w-[100vw] md:w-[40vw]"
   },
   {
     id: "III",
     title: "Kin and Kingdom",
     description: "Survival in the emerald deep. A study of the bloodline. Where the future of the Shivalik Hills finds its footing.",
-    image: "/Chapter3.JPG" // Tiger cubs or family
+    image: "/Chapter3.JPG", // Tiger cubs or family
+    heightClass: "h-[70vh] md:h-[100vh]",
+    widthClass: "w-[100vw] md:w-[40vw]"
   },
   {
     id: "IV",
     title: "The Spotted Ghost",
     description: "A game of shadows. Owner of the void. An elusive presence, brought to light.",
     image: "/Chapter4.JPG", // Default/fallback
+    heightClass: "h-[60vh] md:h-[100vh]",
+    widthClass: "w-[100vw] md:w-[40vw]",
     images: [
       "/Chapter4.JPG",
       "/Chapter4.4.JPG",
@@ -42,13 +50,17 @@ const chapters = [
     id: "V",
     title: "Delicate Wings, Endless Sky",
     description: "Precision frames of India’s most vibrant life",
-    image: "/Chapter5.JPG" // Bird
+    image: "/Chapter5.JPG", // Bird
+    heightClass: "h-[55vh] md:h-[75vh]",
+    widthClass: "w-[100vw] md:w-[85vw]"
   },
   {
     id: "VI",
     title: "Delicate Wings, Endless Sky",
     description: "Precision frames of India’s most vibrant life",
-    image: "/Chapter6.JPG" // Bird
+    image: "/Chapter6.JPG", // Bird
+    heightClass: "h-[55vh] md:h-[75vh]",
+    widthClass: "w-[100vw] md:w-[85vw]"
   }
 
 ];
@@ -68,7 +80,7 @@ export default function WorksPage() {
           >
             <div className="absolute inset-0">
               <Image
-                src="/hero.jpeg"
+                src="/workshero.JPG"
                 alt="Northern Giants Hero"
                 fill
                 className="object-cover"
@@ -174,8 +186,8 @@ function ChapterItem({ chapter, index }: { chapter: any; index: number }) {
         </motion.div>
       </div>
 
-      {/* Image Side - Full Width */}
-      <div className="w-[100vw] h-[60vh] md:h-[100vh] relative overflow-hidden group">
+      {/* Image Side - Dynamic Dimensions */}
+      <div className={`${chapter.widthClass || "w-[100vw]"} ${chapter.heightClass || "h-[60vh] md:h-[100vh]"} relative overflow-hidden group mx-auto rounded-sm`}>
         <AnimatePresence mode="wait">
           {chapter.images && chapter.images.length > 1 ? (
             <motion.div

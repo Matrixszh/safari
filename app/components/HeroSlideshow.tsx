@@ -15,22 +15,22 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    desktopSrc: "/hero.jpeg",
-    mobileSrc: "/heroport.jpeg",
+    desktopSrc: "/heroland.JPG",
+    mobileSrc: "/heroport.JPG",
     quote: "In every walk with nature one receives far more than he seeks.",
     author: "John Muir"
   },
   {
     id: 2,
-    desktopSrc: "https://images.unsplash.com/photo-1516426122078-c23e76319801",
-    mobileSrc: "https://images.unsplash.com/photo-1547471080-7541f883b049",
+    desktopSrc: "/heroport2.JPG",
+    mobileSrc: "/heroport2.JPG",
     quote: "The earth has music for those who listen.",
     author: "Shakespeare"
   },
   {
     id: 3,
-    desktopSrc: "https://images.unsplash.com/photo-1549366021-9f761d450615",
-    mobileSrc: "https://images.unsplash.com/photo-1535591273668-578e31182c4f",
+    desktopSrc: "/heroland3.JPG",
+    mobileSrc: "/heroport3.JPG",
     quote: "Wilderness is not a luxury but a necessity of the human spirit.",
     author: "Edward Abbey"
   }
