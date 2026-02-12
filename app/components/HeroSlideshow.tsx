@@ -22,15 +22,15 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    desktopSrc: "/heroport2.JPG",
-    mobileSrc: "/heroport2.JPG",
+    desktopSrc: "/heroland3.JPG",
+    mobileSrc: "/heroport3.JPG",
     quote: "The earth has music for those who listen.",
     author: "Shakespeare"
   },
   {
     id: 3,
-    desktopSrc: "/heroland3.JPG",
-    mobileSrc: "/heroport3.JPG",
+    desktopSrc: "/workshero.JPG",
+    mobileSrc: "/workshero.JPG",
     quote: "Wilderness is not a luxury but a necessity of the human spirit.",
     author: "Edward Abbey"
   }

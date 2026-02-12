@@ -20,18 +20,19 @@ export default function BottomNav({ openDirection = "up" }: { openDirection?: "u
       image: "/About3.JPG",
       desc: "Learn more about me"
     },
+    
+    
+    { 
+      name: "WORKS", 
+      href: "/work", 
+      image: "/workshero.JPG",
+      desc: "Get in touch"
+    },
     { 
       name: "SAFARI", 
       href: "/safari", 
       image: "/safariland.jpeg",
       desc: "Discover my work"
-    },
-    
-    { 
-      name: "WORK", 
-      href: "/work", 
-      image: "/workshero.JPG",
-      desc: "Get in touch"
     },
     { 
       name: "CONTACT", 

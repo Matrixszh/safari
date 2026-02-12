@@ -4,6 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export interface ImageWithSettings {
   src: string;
@@ -25,6 +26,14 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 60 }, [Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeSlide, setActiveSlide] = useState<number | null>(null);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -80,7 +89,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="overflow-hidden rounded-sm border border-black/10 bg-gray-50" ref={emblaRef}>
+          <div className="overflow-hidden rounded-sm border border-black/10 bg-gray-50 group/carousel" ref={emblaRef}>
             <div className="flex">
               {images.map((item, index) => (
                 <div 
@@ -92,12 +101,12 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
                       src={item.src}
                       alt={item.alt || `${title} - Image ${index + 1}`}
                       fill
-                      className={`object-cover transition-all duration-500 ${activeSlide === index ? 'brightness-50 blur-[2px]' : 'group-hover:brightness-50 group-hover:blur-[2px]'}`}
+                      className={`object-cover transition-all duration-500 ${activeSlide === index ? 'brightness-75' : 'group-hover:brightness-75'}`}
                     />
                    
                    {/* Camera Settings Overlay */}
-                   <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${activeSlide === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-                        <div className="bg-black/60 backdrop-blur-md border border-[#F7E07E]/30 p-6 md:p-8 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                   <div className={`absolute bottom-6 right-6 flex items-end justify-end transition-all duration-500 ${activeSlide === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                        <div className="bg-black/40 border border-[#F7E07E]/30 p-4 md:p-6 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                             <div className="flex flex-col items-center gap-2">
                                 <span className="text-[#F7E07E] text-xs uppercase tracking-[0.2em] mb-2">Camera Settings</span>
                                 <div className="flex items-center gap-6 text-white font-light text-lg md:text-xl tracking-wide">
@@ -122,6 +131,28 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
                 </div>
               ))}
             </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollPrev();
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-black/20 hover:bg-black/40 text-white/70 hover:text-white transition-all duration-300 backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollNext();
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-black/20 hover:bg-black/40 text-white/70 hover:text-white transition-all duration-300 backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
 
           {/* Indicators */}

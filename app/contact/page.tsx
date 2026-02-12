@@ -86,51 +86,12 @@ export default function ContactPage() {
 
   return (
     <ReactLenis root>
-      <main className="bg-black min-h-screen text-white font-sans overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="relative h-[100dvh] w-full overflow-hidden">
-          {/* Background Image */}
-          <motion.div 
-            className="absolute inset-0"
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          >
-            <div className="absolute inset-0">
-              <Image
-                src="/hero.jpeg"
-                alt="Contact Hero"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/40" />
-            {/* Vignette effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
-          </motion.div>
-
-          {/* Logo - Top Center */}
-          <motion.div 
-            className="absolute top-8 md:top-12 left-0 right-0 z-20 flex justify-center"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-          >
-            <div className="relative w-48 h-12 md:w-64 md:h-16">
-              <Image
-                src="/logo.png"
-                alt="Syed Nouman"
-                fill
-                className="object-contain drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
-                priority
-              />
-            </div>
-          </motion.div>
-
-          {/* Bottom Navigation */}
-          <BottomNav />
+      <main className="bg-white min-h-screen text-black font-sans overflow-x-hidden">
+        {/* Safari-style Header */}
+        <section className="relative w-full h-auto bg-black">
+          <div className="relative h-[20vh]">
+             <BottomNav openDirection="down" />
+          </div>
         </section>
 
         {/* Content Section */}
@@ -144,10 +105,10 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-32 max-w-4xl mx-auto"
           >
-            <blockquote className="text-3xl md:text-5xl font-serif font-light leading-tight text-white/90">
+            <blockquote className="text-3xl md:text-5xl font-serif font-light leading-tight text-gray-800">
               "The wilderness holds answers to questions we have not yet learned to ask."
             </blockquote>
-            <cite className="block mt-8 text-[#F7E07E] tracking-widest text-sm uppercase not-italic">
+            <cite className="block mt-8 text-[#D4AF37] tracking-widest text-sm uppercase not-italic">
               — Nancy Newhall
             </cite>
           </motion.div>
@@ -162,28 +123,28 @@ export default function ContactPage() {
               className="space-y-12"
             >
               <div>
-                <h2 className="text-4xl md:text-5xl font-serif text-[#F7E07E] mb-6">Let's Connect</h2>
-                <div className="h-0.5 w-20 bg-[#F7E07E] mb-8" />
-                <p className="text-lg text-gray-400 font-light leading-relaxed">
+                <h2 className="text-4xl md:text-5xl font-serif text-[#D4AF37] mb-6">Let's Connect</h2>
+                <div className="h-0.5 w-20 bg-[#D4AF37] mb-8" />
+                <p className="text-lg text-gray-600 font-light leading-relaxed">
                   Whether you're looking to book a safari, inquire about prints, or simply share a story from the wild, I'd love to hear from you.
                 </p>
               </div>
 
               <div className="space-y-8 text-lg font-light">
                 <div className="flex flex-col">
-                  <span className="text-[#F7E07E] text-xs uppercase tracking-widest mb-2">Email</span>
-                  <a href="mailto:hello@syednouman.com" className="hover:text-[#F7E07E] transition-colors">hello@syednouman.com</a>
+                  <span className="text-[#D4AF37] text-xs uppercase tracking-widest mb-2">Email</span>
+                  <a href="mailto:hello@syednouman.com" className="hover:text-[#D4AF37] transition-colors">hello@syednouman.com</a>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[#F7E07E] text-xs uppercase tracking-widest mb-2">Location</span>
+                  <span className="text-[#D4AF37] text-xs uppercase tracking-widest mb-2">Location</span>
                   <span>Based in India • Available Worldwide</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[#F7E07E] text-xs uppercase tracking-widest mb-2">Socials</span>
+                  <span className="text-[#D4AF37] text-xs uppercase tracking-widest mb-2">Socials</span>
                   <div className="flex gap-6">
-                    <a href="#" className="hover:text-[#F7E07E] transition-colors">Instagram</a>
-                    <a href="#" className="hover:text-[#F7E07E] transition-colors">Twitter</a>
-                    <a href="#" className="hover:text-[#F7E07E] transition-colors">LinkedIn</a>
+                    <a href="#" className="hover:text-[#D4AF37] transition-colors">Instagram</a>
+                    <a href="#" className="hover:text-[#D4AF37] transition-colors">Twitter</a>
+                    <a href="#" className="hover:text-[#D4AF37] transition-colors">LinkedIn</a>
                   </div>
                 </div>
               </div>
@@ -195,48 +156,48 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-white/5 p-8 md:p-12 rounded-sm border border-white/10"
+              className="bg-black/5 p-8 md:p-12 rounded-sm border border-black/10"
             >
-              <h3 className="text-2xl font-serif text-white mb-8">Booking Inquiry</h3>
+              <h3 className="text-2xl font-serif text-black mb-8">Booking Inquiry</h3>
               
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
                 {/* Name */}
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-xs uppercase tracking-widest text-gray-400">Name</label>
+                  <label htmlFor="name" className="text-xs uppercase tracking-widest text-gray-600">Name</label>
                   <input
                     type="text"
                     id="name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-[#F7E07E] transition-colors"
+                    className="w-full bg-transparent border-b border-black/20 py-3 text-black focus:outline-none focus:border-[#D4AF37] transition-colors"
                     placeholder="Your full name"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-xs uppercase tracking-widest text-gray-400">Email</label>
+                  <label htmlFor="email" className="text-xs uppercase tracking-widest text-gray-600">Email</label>
                   <input
                     type="email"
                     id="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-[#F7E07E] transition-colors"
+                    className="w-full bg-transparent border-b border-black/20 py-3 text-black focus:outline-none focus:border-[#D4AF37] transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 {/* Preferred Dates */}
                 <div className="space-y-2">
-                  <label htmlFor="dates" className="text-xs uppercase tracking-widest text-gray-400">Preferred Dates</label>
+                  <label htmlFor="dates" className="text-xs uppercase tracking-widest text-gray-600">Preferred Dates</label>
                   <input
                     type="text"
                     id="dates"
                     value={formData.preferredDates}
                     onChange={(e) => setFormData({ ...formData, preferredDates: e.target.value })}
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-[#F7E07E] transition-colors"
+                    className="w-full bg-transparent border-b border-black/20 py-3 text-black focus:outline-none focus:border-[#D4AF37] transition-colors"
                     placeholder="e.g., March 2024"
                   />
                 </div>
@@ -249,11 +210,11 @@ export default function ContactPage() {
                       id="meeting"
                       checked={formData.connectOverMeeting}
                       onChange={(e) => setFormData({ ...formData, connectOverMeeting: e.target.checked })}
-                      className="peer h-5 w-5 cursor-pointer appearance-none rounded-sm border border-white/30 checked:border-[#F7E07E] checked:bg-[#F7E07E] transition-all"
+                      className="peer h-5 w-5 cursor-pointer appearance-none rounded-sm border border-black/30 checked:border-[#D4AF37] checked:bg-[#D4AF37] transition-all"
                     />
-                    <Check className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 pointer-events-none" />
+                    <Check className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 pointer-events-none" />
                   </div>
-                  <label htmlFor="meeting" className="text-sm text-gray-300 cursor-pointer select-none">
+                  <label htmlFor="meeting" className="text-sm text-gray-600 cursor-pointer select-none">
                     Connect over a meeting
                     <span className="block text-xs text-gray-500 mt-1">We can schedule a video call to discuss your itinerary.</span>
                   </label>
@@ -261,14 +222,14 @@ export default function ContactPage() {
 
                 {/* Focus Areas */}
                 <div className="space-y-4 pt-4">
-                  <label className="text-xs uppercase tracking-widest text-gray-400 block mb-4">Focus Areas (Select all that apply)</label>
+                  <label className="text-xs uppercase tracking-widest text-gray-600 block mb-4">Focus Areas (Select all that apply)</label>
                   <div className="grid grid-cols-1 gap-3">
                     {focusOptions.map((option) => (
                       <div key={option} className="flex items-center gap-3 group cursor-pointer" onClick={() => handleFocusChange(option)}>
-                        <div className={`w-5 h-5 border rounded-sm flex items-center justify-center transition-all ${formData.focus.includes(option) ? 'bg-[#F7E07E] border-[#F7E07E]' : 'border-white/30 group-hover:border-white/50'}`}>
-                          {formData.focus.includes(option) && <Check className="w-3.5 h-3.5 text-black" />}
+                        <div className={`w-5 h-5 border rounded-sm flex items-center justify-center transition-all ${formData.focus.includes(option) ? 'bg-[#D4AF37] border-[#D4AF37]' : 'border-black/30 group-hover:border-black/50'}`}>
+                          {formData.focus.includes(option) && <Check className="w-3.5 h-3.5 text-white" />}
                         </div>
-                        <span className={`text-sm transition-colors ${formData.focus.includes(option) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>
+                        <span className={`text-sm transition-colors ${formData.focus.includes(option) ? 'text-black font-medium' : 'text-gray-600 group-hover:text-black'}`}>
                           {option}
                         </span>
                       </div>
@@ -280,17 +241,17 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#F7E07E] text-black font-medium tracking-widest uppercase py-4 mt-8 hover:bg-[#d4af37] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#D4AF37] text-white font-medium tracking-widest uppercase py-4 mt-8 hover:bg-[#b89730] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Inquiry"}
                 </button>
 
                 {/* Status Messages */}
                 {submitStatus === "success" && (
-                  <p className="text-green-400 text-center text-sm mt-4">Message sent successfully! We'll be in touch soon.</p>
+                  <p className="text-green-600 text-center text-sm mt-4">Message sent successfully! We'll be in touch soon.</p>
                 )}
                 {submitStatus === "error" && (
-                  <p className="text-red-400 text-center text-sm mt-4">Something went wrong. Please try again later.</p>
+                  <p className="text-red-600 text-center text-sm mt-4">Something went wrong. Please try again later.</p>
                 )}
               </form>
             </motion.div>

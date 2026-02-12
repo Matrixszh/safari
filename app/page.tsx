@@ -52,7 +52,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-4xl mx-auto text-center space-y-12"
         >
-          <p className="text-2xl md:text-4xl lg:text-5xl font-extralight leading-relaxed bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+          <p className="text-xl md:text-3xl lg:text-3xl font-extralight leading-relaxed bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
             "Explore how Syed Nouman’s love for childhood wildlife transitioned into professional art."
           </p>
           

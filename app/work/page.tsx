@@ -68,51 +68,12 @@ const chapters = [
 export default function WorksPage() {
   return (
     <ReactLenis root>
-      <main className="bg-black min-h-screen text-white font-sans overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="relative h-[100dvh] w-full overflow-hidden">
-          {/* Background Image */}
-          <motion.div 
-            className="absolute inset-0"
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          >
-            <div className="absolute inset-0">
-              <Image
-                src="/workshero.JPG"
-                alt="Northern Giants Hero"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/40" />
-            {/* Vignette effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
-          </motion.div>
-
-          {/* Logo - Top Center */}
-          <motion.div 
-            className="absolute top-8 md:top-12 left-0 right-0 z-20 flex justify-center"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-          >
-            <div className="relative w-48 h-12 md:w-64 md:h-16">
-              <Image
-                src="/logo.png"
-                alt="Syed Nouman"
-                fill
-                className="object-contain drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
-                priority
-              />
-            </div>
-          </motion.div>
-
-          {/* Bottom Navigation */}
-          <BottomNav />
+      <main className="bg-white min-h-screen text-black font-sans overflow-x-hidden">
+        {/* Safari-style Header */}
+        <section className="relative w-full h-auto bg-black">
+          <div className="relative h-[20vh]">
+             <BottomNav openDirection="down" />
+          </div>
         </section>
 
         {/* Page Title Header */}
@@ -124,10 +85,10 @@ export default function WorksPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif tracking-tighter text-[#F7E07E] drop-shadow-lg opacity-90">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif tracking-tighter bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-sm opacity-90">
               The Works
             </h1>
-            <p className="mt-6 text-lg md:text-xl font-light tracking-widest text-gray-400 uppercase">
+            <p className="mt-6 text-lg md:text-xl font-light tracking-widest text-gray-600 uppercase">
               A Journey Through the Wild
             </p>
           </motion.div>
@@ -175,12 +136,12 @@ function ChapterItem({ chapter, index }: { chapter: any; index: number }) {
           <span className="block text-8xl md:text-9xl font-serif text-[#222] absolute -top-16 left-1/2 -translate-x-1/2 -z-10 select-none">
             {chapter.id}
           </span>
-          <h2 className="text-4xl md:text-6xl font-serif text-[#F7E07E] mb-6">
+          <h2 className="text-4xl md:text-6xl font-serif text-[#D4AF37] mb-6">
             <span className="text-sm tracking-widest text-gray-500 block mb-2 font-sans uppercase">Chapter {chapter.id}</span>
             {chapter.title}
           </h2>
-          <div className="h-1 w-24 bg-[#F7E07E] mb-8 mx-auto" />
-          <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-300">
+          <div className="h-1 w-24 bg-[#D4AF37] mb-8 mx-auto" />
+          <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-600">
             {chapter.description}
           </p>
         </motion.div>

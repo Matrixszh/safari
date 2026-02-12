@@ -1,7 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ReactLenis } from "lenis/react";
 import BottomNav from "../components/BottomNav";
 import SafariTopic from "../components/SafariTopic";
@@ -22,11 +23,6 @@ const TOPIC_2_IMAGES = [
     settings: { iso: "200", aperture: "f/5.6", shutter: "1/2000s" }
   },
   
-  { 
-    src: "/Safari2.1.JPG", 
-    alt: "Safari Moment 6",
-    settings: { iso: "320", aperture: "f/5.6", shutter: "1/1600s" }
-  },
   
   { 
     src: "/Safari2.2.JPG", 
@@ -39,19 +35,9 @@ const TOPIC_2_IMAGES = [
     settings: { iso: "100", aperture: "f/8.0", shutter: "1/500s" }
   },
   { 
-    src: "/Safari2.5.JPG", 
-    alt: "Safari Moment 5",
-    settings: { iso: "800", aperture: "f/2.8", shutter: "1/1250s" }
-  },
-  { 
     src: "/Safari2.6.JPG", 
     alt: "Safari Moment 6",
     settings: { iso: "320", aperture: "f/5.6", shutter: "1/1600s" }
-  },
-  { 
-    src: "/Safari2.7.JPG", 
-    alt: "Safari Moment 7",
-    settings: { iso: "160", aperture: "f/6.3", shutter: "1/800s" }
   }
 ];
 
@@ -174,7 +160,7 @@ export default function Safari() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
+                <div className="relative h-[400px] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
                     src="/Strategic1.JPG" 
                     alt="Solitary Female Tiger" 
@@ -206,7 +192,7 @@ export default function Safari() {
                     </div>
                   </div>
                 </div>
-                <div className="order-2 md:order-1 relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
+                <div className="order-2 md:order-1 relative h-[400px] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
                     src="/Strategic2.JPG" 
                     alt="Scissor and Cubs" 
@@ -238,53 +224,73 @@ export default function Safari() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
-                  <Image 
-                    src="/Strategic3.JPG" 
-                    alt="Leopard Cub on Branch" 
-                    fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                <div className="relative h-[400px] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
+                  <CaseStudySlideshow 
+                    images={["/Strategic3.JPG", "/Strategic4.JPG"]} 
+                    alt="Leopard Cub on Branch"
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500" />
                 </div>
               </div>
 
-              {/* Case Study 4: The Serpentine Path */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-                <div className="order-1 md:order-2 space-y-8">
-                  <h3 className="text-2xl md:text-3xl font-light text-black border-l-2 border-[#D4AF37] pl-6">
-                    The Serpentine Path
-                  </h3>
-                  <div className="space-y-6 text-lg font-light text-gray-600 leading-relaxed">
-                    <div>
-                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Scenario</strong>
-                      <p>It was minutes before sunset—the final light of the day. Most were heading toward the exit, but the forest was speaking through sharp Langur alarm calls echoing from a specific thicket.</p>
-                    </div>
-                    <div>
-                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
-                      <p>While others ignored the calls to make the gate on time, we knew exactly which bend to hold. I positioned the Gypsy to not just catch the tiger, but to frame the serpentine curve of the road itself.</p>
-                    </div>
-                    <div>
-                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
-                      <p>We didn't just get a tiger; we got a story of the journey. He stepped onto the asphalt exactly where the road coiled, looking back to acknowledge our presence. It was a reminder: You don't walk your road twice; do it right.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="order-2 md:order-1 relative h-[400px] md:h-[600px] w-full rounded-sm overflow-hidden group shadow-lg">
-                  <Image 
-                    src="/Strategic4.JPG" 
-                    alt="Tiger on Serpentine Road" 
-                    fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                  />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500" />
-                </div>
-              </div>
+            
 
             </div>
           </section>
         </div>
       </main>
     </ReactLenis>
+  );
+}
+
+function CaseStudySlideshow({ images, alt }: { images: string[], alt: string }) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <Image
+            src={images[current]}
+            alt={`${alt} - Slide ${current + 1}`}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </motion.div>
+      </AnimatePresence>
+      
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+
+      {/* Dots Indicator */}
+      {images.length > 1 && (
+        <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-10 pointer-events-auto">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrent(idx)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                idx === current ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </>
   );
 }

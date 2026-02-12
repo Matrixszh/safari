@@ -46,10 +46,10 @@ export default function About() {
       <div className="bg-white">
      
         
-        {/* Redesigned About Section - Image Left, Text Right */}
+        {/* Redesigned About Section - Text Left, Image Right */ }
         <div className="pt-20 max-w-[1400px] mx-auto px-6 pb-24 md:pb-32">
-          <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
-            {/* Left: Image Slideshow */}
+          <div className="flex flex-col md:flex-row-reverse gap-12 md:gap-24 items-center">
+            {/* Image Slideshow (Right on Desktop) */}
             <div className="w-full md:w-1/2 relative h-[600px] md:h-[700px]">
               <div className="absolute inset-0 bg-black rounded-lg overflow-hidden">
                 <AnimatePresence mode="wait">
@@ -88,7 +88,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right: Content */}
+            {/* Content (Left on Desktop) */}
             <div className="w-full md:w-1/2 space-y-8 md:space-y-12">
               <div>
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide text-black uppercase mb-8 drop-shadow-sm border-b-3 border-[#F7E07E] inline-block pb-2">
