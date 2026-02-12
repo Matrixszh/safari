@@ -89,7 +89,7 @@ export default function ContactPage() {
       <main className="bg-white min-h-screen text-black font-sans overflow-x-hidden">
         {/* Safari-style Header */}
         <section className="relative w-full h-auto bg-black">
-          <div className="relative h-[20vh]">
+          <div className="relative h-20 md:h-28">
              <BottomNav openDirection="down" variant="header" />
           </div>
         </section>

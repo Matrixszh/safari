@@ -14,7 +14,7 @@ const chapters = [
     description: "At fifteen months, the northern hybrid already towers over the queen who raised him. A testament to Siberian iron flowing through a Bengal heart amidst the Terai plains.",
     image: "/Chapter1.JPG", // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
     heightClass: "h-[100vh] md:h-[100vh]",
-    widthClass: "w-[100vw] md:w-[80vw]"
+    widthClass: "w-full md:w-[80vw]"
   },
   {
     id: "II",
@@ -22,7 +22,7 @@ const chapters = [
     description: "A daughter of Kishanpur’s most iconic lineage, photographed pushing into uncharted territory. Perched on a sandhill like a makeshift throne, she isn’t just resting, she is claiming her future.",
     image: "/Chapter2.JPG", // Tiger on hill/rock
     heightClass: "h-[50vh] md:h-[100vh]",
-    widthClass: "w-[100vw] md:w-[40vw]"
+    widthClass: "w-full md:w-[40vw]"
   },
   {
     id: "III",
@@ -30,7 +30,7 @@ const chapters = [
     description: "Survival in the emerald deep. A study of the bloodline. Where the future of the Shivalik Hills finds its footing.",
     image: "/Chapter3.JPG", // Tiger cubs or family
     heightClass: "h-[70vh] md:h-[100vh]",
-    widthClass: "w-[100vw] md:w-[40vw]"
+    widthClass: "w-full md:w-[40vw]"
   },
   {
     id: "IV",
@@ -38,7 +38,7 @@ const chapters = [
     description: "Precision frames of India’s most vibrant life.A flash of pigment in the canopy’s shade; The vibrant brushstrokes that time has made.",
     image: "/Chapter4.JPG", // Default/fallback
     heightClass: "h-[60vh] md:h-[100vh]",
-    widthClass: "w-[100vw] md:w-[40vw]",
+    widthClass: "w-full md:w-[40vw]",
     images: [
       "/Chapter4.JPG",
       "/Chapter4.4.JPG",
@@ -52,7 +52,7 @@ const chapters = [
     description: "An apex so absolute, she’s concealed in air.",
     image: "/Chapter5.JPG", // Bird
     heightClass: "h-[55vh] md:h-[75vh]",
-    widthClass: "w-[100vw] md:w-[85vw]"
+    widthClass: "w-full md:w-[85vw]"
   },
   {
     id: "VI",
@@ -60,7 +60,7 @@ const chapters = [
     description: "Only like a quiet painting.",
     image: "/Chapter6.JPG", // Bird
     heightClass: "h-[55vh] md:h-[75vh]",
-    widthClass: "w-[100vw] md:w-[85vw]"
+    widthClass: "w-full md:w-[85vw]"
   }
 
 ];
@@ -71,7 +71,7 @@ export default function WorksPage() {
       <main className="bg-white min-h-screen text-black font-sans overflow-x-hidden">
         {/* Safari-style Header */}
         <section className="relative w-full h-auto bg-black">
-          <div className="relative h-[20vh]">
+          <div className="relative h-20 md:h-28">
              <BottomNav openDirection="down" variant="header" />
           </div>
         </section>
@@ -148,7 +148,7 @@ function ChapterItem({ chapter, index }: { chapter: any; index: number }) {
       </div>
 
       {/* Image Side - Dynamic Dimensions */}
-      <div className={`${chapter.widthClass || "w-[100vw]"} ${chapter.heightClass || "h-[60vh] md:h-[100vh]"} relative overflow-hidden group mx-auto rounded-sm`}>
+      <div className={`${chapter.widthClass || "w-full"} ${chapter.heightClass || "h-[60vh] md:h-[100vh]"} relative overflow-hidden group mx-auto rounded-sm`}>
         <AnimatePresence mode="wait">
           {chapter.images && chapter.images.length > 1 ? (
             <motion.div

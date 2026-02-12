@@ -28,7 +28,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative w-full h-auto bg-black">
         {/* Bottom Navigation */}
-        <div className="relative h-[20vh]">
+        <div className="relative h-20 md:h-28">
             <BottomNav openDirection="down" variant="header" />
         </div>
       </section>

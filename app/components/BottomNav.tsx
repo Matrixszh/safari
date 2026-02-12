@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 interface BottomNavProps {
   openDirection?: "up" | "down";
@@ -11,6 +12,7 @@ interface BottomNavProps {
 
 export default function BottomNav({ openDirection = "up", variant = "default" }: BottomNavProps) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
     { 
@@ -48,13 +50,13 @@ export default function BottomNav({ openDirection = "up", variant = "default" }:
   if (variant === "header") {
     return (
       <motion.div 
-        className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-8 text-white w-full h-full"
+        className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 text-white w-full h-auto"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Logo Left */}
-        <div className="relative w-32 h-8 md:w-48 md:h-12 shrink-0">
+        <div className="relative w-40 h-10 md:w-60 md:h-16 shrink-0 z-50">
            <Image 
              src="/logo.png" 
              alt="Syed Nouman" 
@@ -64,8 +66,8 @@ export default function BottomNav({ openDirection = "up", variant = "default" }:
            />
         </div>
 
-        {/* Nav Right */}
-        <nav className="relative flex items-center gap-6 md:gap-8 text-[10px] md:text-xs font-medium tracking-widest shrink-0">
+        {/* Desktop Nav Right */}
+        <nav className="hidden md:flex items-center gap-6 md:gap-8 text-[10px] md:text-xs font-medium tracking-widest shrink-0">
           {menuItems.map((item) => (
             <div key={item.name} className="relative flex flex-col items-center">
               {/* Preview Card */}
@@ -105,6 +107,50 @@ export default function BottomNav({ openDirection = "up", variant = "default" }:
             </div>
           ))}
         </nav>
+
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden z-50">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-white focus:outline-none p-2"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-8 h-8" />
+            ) : (
+              <Menu className="w-8 h-8" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Fullscreen Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center md:hidden"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <nav className="flex flex-col items-center gap-8">
+                {menuItems.map((item, index) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    className="text-2xl font-light tracking-widest text-white hover:text-amber-400 transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index, duration: 0.3 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     );
   }
