@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BackgroundAudio from "./components/BackgroundAudio";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 export default function ClientLayout({
   children,
@@ -47,7 +49,9 @@ export default function ClientLayout({
       {!isLoading && (
         <>
           {children}
+          <Footer />
           <BackgroundAudio />
+          <ScrollToTop />
         </>
       )}
     </>

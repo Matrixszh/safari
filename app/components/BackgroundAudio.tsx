@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 
 // Audio tracks for different pages
@@ -21,6 +21,20 @@ export default function BackgroundAudio() {
   const pathname = usePathname();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isMuted, setIsMuted] = useState(false); 
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -121,17 +135,22 @@ export default function BackgroundAudio() {
         autoPlay
       />
       
-      <motion.button
-        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 p-2 md:p-3 rounded-full bg-black/50 backdrop-blur-md border border-[#F7E07E]/30 text-[#F7E07E] hover:bg-black/70 hover:scale-110 transition-all cursor-pointer shadow-[0_0_15px_rgba(247,224,126,0.2)]"
-        onClick={toggleMute}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-      >
-        {isMuted ? <VolumeX className="w-5 h-5 md:w-6 md:h-6" /> : <Volume2 className="w-5 h-5 md:w-6 md:h-6" />}
-      </motion.button>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.button
+            className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 p-2 md:p-3 rounded-full bg-black/50 backdrop-blur-md border border-[#F7E07E]/30 text-[#F7E07E] hover:bg-black/70 hover:scale-110 transition-all cursor-pointer shadow-[0_0_15px_rgba(247,224,126,0.2)]"
+            onClick={toggleMute}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {isMuted ? <VolumeX className="w-5 h-5 md:w-6 md:h-6" /> : <Volume2 className="w-5 h-5 md:w-6 md:h-6" />}
+          </motion.button>
+        )}
+      </AnimatePresence>
     </>
   );
 }

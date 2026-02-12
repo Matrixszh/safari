@@ -1,15 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "../components/BottomNav";
-import HorizontalScroll from "../components/HorizontalScroll";
+import FramerMoveableThumbnails from "../components/MovableCarousal";
+import ButtonCreativeRight from "../components/ButtonF";
 
 export default function About() {
   return (
-    <main className="min-h-screen font-sans bg-[#F9F7F2]">
+    <main className="min-h-screen font-sans bg-white">
       {/* Hero Section */}
       <section className="relative h-[100dvh] w-full overflow-hidden bg-black">
         {/* Background Image */}
@@ -64,69 +63,75 @@ export default function About() {
       </section>
 
       {/* Story Header & Carousel Section */}
-      <div className="bg-black">
-        <header className="relative w-full grid place-content-center h-[40vh] md:h-[60vh]">
-          <h1 className="text-4xl md:text-7xl font-light tracking-[0.2em] leading-tight text-[#F7E07E] text-center px-4 uppercase">
-            Know the Story
-          </h1>
-        </header>
-        <HorizontalScroll />
-      </div>
+      <div className="bg-white">
+     
+        
+        {/* Redesigned About Section - Image Left, Text Right */}
+        <div className="pt-20 max-w-[1400px] mx-auto px-6 pb-24 md:pb-32">
+          <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
+            {/* Left: Image */}
+            <div className="w-full md:w-1/2 relative h-[600px] md:h-[800px]">
+              <div className="absolute inset-0 bg-gray-100 rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1552168324-d612d77725e3"
+                  alt="Syed Nouman Portrait"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
 
-      {/* Middle Text Section (Moved from Home) */}
-      <section className="px-6 py-24 md:py-32">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-2xl md:text-4xl leading-relaxed text-gray-800 font-light">
-            Finding a home or renting a car isn&apos;t just about{" "}
-            <span className="font-bold text-black">keys and contracts</span>
-            —it&apos;s about setting the scene for all those{" "}
-            <span className="font-serif italic text-3xl md:text-5xl">unforgettable moments</span>{" "}
-            with family and friends. Let&apos;s get you the perfect place (or wheels)
-            to make memories happen.
-          </h2>
-        </div>
-      </section>
-
-      {/* Bottom Content Section (Moved from Home) */}
-      <section className="pb-24 px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
-          {/* Left Image */}
-          <div className="relative aspect-[4/5] w-full overflow-hidden shadow-xl">
-            <Image
-              src="https://images.unsplash.com/photo-1500964757637-c85e8a162699"
-              alt="Tigers"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Right Content */}
-          <div className="flex flex-col justify-center lg:pl-12">
-            <h3 className="text-5xl font-medium text-black mb-2">Nouman</h3>
-            <p className="font-serif italic text-[#4A5D88] text-xl mb-8">
-              Professional Photographer
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-8 max-w-md">
-              With a career rooted in Tremblant, I&apos;ve worn many hats—from ski school
-              director to real estate developer, and now, broker and rental expert.
-              My knowledge of the region and the real estate market, along with
-              years of collaboration with Engel & Völkers, allows me to connect
-              clients with spaces that capture the best of modern living in harmony
-              with nature. Whether you&apos;re looking for a rental or a forever home,
-              I&apos;m here to make it happen.
-            </p>
-            
-            <div>
-                <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-6 py-3 text-sm font-medium hover:bg-gray-800 transition-colors"
-                >
-                All Projects
-                <ArrowUpRight className="w-4 h-4" />
-                </a>
+            {/* Right: Content */}
+            <div className="w-full md:w-1/2 space-y-8 md:space-y-12">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-light tracking-wide text-black uppercase mb-8 drop-shadow-sm border-b-3 border-[#F7E07E] inline-block pb-2">
+  About Me
+</h2>
+                <div className="space-y-6 text-lg md:text-xl font-light text-gray-800 leading-relaxed">
+                  <p>
+                    Specializing in the apex predators of the Indian subcontinent, Syed Nouman is a professional wildlife photographer whose work is built on years of fieldcraft and quiet persistence. His practice moves beyond traditional documentation, leaning into a style of magical realism where light and subject converge to create images that feel both grounded and unreal.
+                  </p>
+                  <p>
+                    
+By focusing on transient elements and natural behaviour, Syed captures rare, intimate glimpses into the lives of India’s tigers and the ancient wild.
+                  </p>
+                  <p>
+                    <span className="font-bold ">Note on the Craft:</span> All images are captured in-camera using natural light. No digital composites are used to create the "unreal" atmospheres; they are simply the result of waiting for the moment reality tilts.
+                  </p>
+                </div>
+              </div>
+              <div className="pt-8">
+                <ButtonCreativeRight label="My Work" href="/work" />
+              </div>
+              
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Middle Text Section (Moved from Home) */}
+      <section className="px-6 py-24 md:py-32 bg-white">
+        <div className="items-center mx-auto max-w-4xl text-center">
+          <h2 className="text-2xl md:text-4xl leading-relaxed text-gray-800 font-light mb-12">
+            Finding a home or renting a car isn&apos;t just about{" "}
+            <span className="font-bold text-[#F7E07E]">keys and contracts</span>
+            —it&apos;s about setting the scene for all those{" "}
+            <span className="font-serif italic text-3xl md:text-5xl text-black">unforgettable moments</span>{" "}
+            with family and friends. Let&apos;s get you the perfect place (or wheels)
+            to make memories happen.
+          </h2>
+        
+          <div className="flex justify-center">
+            <ButtonCreativeRight label="Contact" href="/work" />
+          </div>
+            
+        </div>
+        
+      </section>
+
+      {/* Bottom Content Section (Moved from Home) */}
+      <section className="">
+        <FramerMoveableThumbnails/>
       </section>
     </main>
   );

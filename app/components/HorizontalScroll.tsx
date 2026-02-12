@@ -20,15 +20,15 @@ const CAROUSEL_ITEMS = [
       <ul className="space-y-6 text-left max-w-2xl mx-auto">
         <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
           <strong className="text-[#F7E07E] text-xl tracking-wider">In-Depth Tracking</strong>
-          <span className="text-white/80 text-lg font-light">We use years of field craft to track the region’s key species, focusing primarily on the apex predators.</span>
+          <span className="text-gray-800 text-lg font-light">We use years of field craft to track the region’s key species, focusing primarily on the apex predators.</span>
         </li>
         <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
           <strong className="text-[#F7E07E] text-xl tracking-wider">Ecosystem Perspective</strong>
-          <span className="text-white/80 text-lg font-light">We value every layer of the landscape, from raptors to the smaller details that complete a wilderness story.</span>
+          <span className="text-gray-800 text-lg font-light">We value every layer of the landscape, from raptors to the smaller details that complete a wilderness story.</span>
         </li>
         <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
           <strong className="text-[#F7E07E] text-xl tracking-wider">Strategic Positioning</strong>
-          <span className="text-white/80 text-lg font-light">Every sighting is approached with light and angles in mind for the optimal shot.</span>
+          <span className="text-gray-800 text-lg font-light">Every sighting is approached with light and angles in mind for the optimal shot.</span>
         </li>
       </ul>
     ),
@@ -39,18 +39,18 @@ const CAROUSEL_ITEMS = [
     title: "What to Expect",
     content: (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div className="bg-white/5 p-6 backdrop-blur-sm border border-white/10 rounded-sm">
+        <div className="bg-white p-6 border border-gray-100 rounded-sm shadow-sm">
           <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Private Vehicles</strong>
-          <span className="text-white/80 text-lg font-light leading-relaxed">Your safari is custom-tailored to your pace. We don't rush sightings and prioritize quiet areas whenever possible.</span>
+          <span className="text-gray-800 text-lg font-light leading-relaxed">Your safari is custom-tailored to your pace. We don't rush sightings and prioritize quiet areas whenever possible.</span>
         </div>
-        <div className="bg-white/5 p-6 backdrop-blur-sm border border-white/10 rounded-sm">
+        <div className="bg-white p-6 border border-gray-100 rounded-sm shadow-sm">
           <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Authenticity</strong>
-          <span className="text-white/80 text-lg font-light leading-relaxed">No guarantees, just dedicated tracking and a commitment to being in the right place when the moment happens.</span>
+          <span className="text-gray-800 text-lg font-light leading-relaxed">No guarantees, just dedicated tracking and a commitment to being in the right place when the moment happens.</span>
         </div>
       </div>
     ),
     image: "/safariland.jpeg"
-  }
+  },
 ];
 
 export default function HorizontalScroll() {
@@ -129,7 +129,7 @@ export default function HorizontalScroll() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="max-w-5xl"
                       >
-                        <h2 className="text-4xl md:text-8xl font-thin text-amber-400 mb-8 md:mb-16 tracking-[0.1em] text-white uppercase mix-blend-overlay">
+                        <h2 className="text-4xl md:text-8xl font-thin mb-8 md:mb-16 tracking-[0.1em] text-white uppercase mix-blend-overlay">
                           {item.title}
                         </h2>
                         

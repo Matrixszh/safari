@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BottomNav from "./components/BottomNav";
+import HeroSlideshow from "./components/HeroSlideshow";
+import ButtonCreativeRight from "./components/ButtonF";
 
 export default function Home() {
   useEffect(() => {
@@ -11,44 +13,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="h-[100dvh] w-full overflow-hidden font-sans bg-black">
-      <section className="relative h-full w-full overflow-hidden">
-        {/* Background Image */}
-          <motion.div 
-            className="absolute inset-0"
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          >
-            {/* Desktop Image */}
-            <div className="hidden md:block absolute inset-0">
-              <Image
-                src="/hero.jpeg"
-                alt="Dark forest background desktop"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            
-            {/* Mobile Image */}
-            <div className="block md:hidden absolute inset-0">
-              <Image
-                src="/heroport.jpeg"
-                alt="Dark forest background mobile"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+    <main className="w-full font-sans bg-black">
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Slideshow */}
+        <HeroSlideshow />
 
-            {/* Dark overlay to ensure text readability */}
-            <div className="absolute inset-0" />
-            {/* Vignette effect */}
-            <div className="absolute inset-0 " />
-          </motion.div>
-
-          {/* Logo - Top Center */}
+        {/* Logo - Top Center */}
           <motion.div 
             className="absolute top-8 md:top-12 left-0 right-0 z-20 flex justify-center"
             initial={{ y: -50, opacity: 0 }}
@@ -63,6 +33,25 @@ export default function Home() {
 
           {/* Bottom Navigation - Bottom Center */}
           <BottomNav />
+      </section>
+
+      {/* Quote Section */}
+      <section className="bg-black py-32 px-6 flex flex-col items-center justify-center min-h-[50vh]">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="max-w-4xl mx-auto text-center space-y-12"
+        >
+          <p className="text-2xl md:text-4xl lg:text-5xl font-extralight leading-relaxed bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+            "Explore how Syed Nouman’s love for childhood wildlife transitioned into professional art."
+          </p>
+          
+          <div className="flex justify-center">
+            <ButtonCreativeRight label="About Me" href="/about" />
+          </div>
+        </motion.div>
       </section>
     </main>
   );

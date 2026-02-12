@@ -43,7 +43,7 @@ export default function BottomNav() {
 
   return (
     <motion.div 
-      className="absolute bottom-8 md:bottom-16 left-0 right-0 z-20 flex flex-col items-center gap-6 md:gap-8 text-white"
+      className="absolute bottom-4 left-0 right-0 z-20 flex flex-col items-center gap-4 text-white"
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 1.4, duration: 0.8, ease: "easeOut" }}
@@ -89,9 +89,9 @@ export default function BottomNav() {
         ))}
       </nav>
       
-      {/* Line below menu */}
+      {/* Horizontal Line */}
       <motion.div 
-        className="h-[1px] w-[60vw] md:w-[30vw] bg-amber-300"
+        className="h-[1px] w-[60vw] md:w-[30vw] bg-amber-300/60"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ delay: 1.6, duration: 1.0, ease: "easeInOut" }}
@@ -99,19 +99,24 @@ export default function BottomNav() {
 
       {/* Subtle Scroll Indicator */}
       <motion.div
-        className="mt-4 flex flex-col items-center gap-2"
+        className="flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.2, duration: 1.0 }}
       >
-        <span className="text-[8px] tracking-[0.3em] text-white/40 uppercase">Scroll</span>
-        <div className="relative h-12 w-[1px] overflow-hidden bg-white/10">
-          <motion.div
-            className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent to-amber-200/50"
-            animate={{ y: [-24, 48] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
+        <motion.span 
+            className="text-[10px] tracking-[0.3em] uppercase"
+            animate={{ 
+                color: ["rgba(255,255,255,0.4)", "rgba(252,211,77,1)", "rgba(255,255,255,0.4)"] 
+            }}
+            transition={{ 
+                duration: 2, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+            }}
+        >
+            Scroll
+        </motion.span>
       </motion.div>
     </motion.div>
   );
