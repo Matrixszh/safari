@@ -116,7 +116,7 @@ export default function About() {
         <div className="pt-10 max-w-[1400px] mx-auto px-6 pb-24 md:pb-32">
           <div className="flex flex-col md:flex-row-reverse gap-12 md:gap-24 items-center">
             {/* Image Slideshow (Right on Desktop) */}
-            <div className="w-full md:w-1/2 relative h-[600px] md:h-[700px]">
+            <div className="w-full md:w-1/2 relative h-[500px] md:h-[700px]">
               <div className="absolute inset-0 bg-black rounded-lg overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
