@@ -63,28 +63,32 @@ const navItems: CardNavItem[] = [
   }
 ];
 
-const HERO_SLIDES = [
-  {
-    src: "/Safari2.2.JPG",
-    alt: "Riverine grassland safari"
-  },
-  {
-    src: "/Chapter6.JPG",
-    alt: "Forest road through misty grassland"
-  }
-];
-
 const HERO_CAROUSEL_IMAGES = [
   {
-    src: "/Chapter6.JPG",
+    src: "/TPC.JPG",
     alt: "Riverbed track framed by trees"
   },
   {
-    src: "/SafariLand.JPG",
+    src: "/TPC1.JPG",
+    alt: "Open grassland with layered trees"
+  },
+  
+  {
+    src: "/TPC2.JPG",
+    alt: "Open grassland with layered trees"
+  },
+  
+  {
+    src: "/TPC3.JPG",
     alt: "Open grassland with layered trees"
   },
   {
-    src: "/Safari2.JPG",
+    src: "/TPC4.JPG",
+    alt: "Predator silhouette in evening light"
+  },
+  
+  {
+    src: "/TPC5.JPG",
     alt: "Predator silhouette in evening light"
   }
 ];
@@ -92,14 +96,6 @@ const HERO_CAROUSEL_IMAGES = [
 export default function SafariPackageTwoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [heroIndex, setHeroIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -119,24 +115,12 @@ export default function SafariPackageTwoPage() {
       <main className="bg-gray-100 min-h-screen text-black font-sans overflow-x-hidden">
         <section className="relative w-full min-h-[50vh] md:min-h-screen text-white">
           <div className="absolute inset-0">
-            <AnimatePresence>
-              <motion.div
-                key={heroIndex}
-                className="absolute inset-0"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.2, ease: "easeInOut" }}
-              >
-                <Image
-                  src={HERO_SLIDES[heroIndex].src}
-                  alt={HERO_SLIDES[heroIndex].alt}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/10" />
-              </motion.div>
-            </AnimatePresence>
+            <Image
+              src="/HEROLAND3.JPG"
+              alt="Riverine grassland safari"
+              fill
+              className="object-cover"
+            />
           </div>
 
           <div className="relative z-10 pt-4">
@@ -152,20 +136,6 @@ export default function SafariPackageTwoPage() {
             />
           </div>
 
-          <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-10">
-            {HERO_SLIDES.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setHeroIndex(index)}
-                className={`h-1 rounded-full transition-all duration-300 ${
-                  index === heroIndex
-                    ? "w-10 bg-white"
-                    : "w-4 bg-white/40 hover:bg-white/80"
-                }`}
-                aria-label={`Go to hero slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </section>
 
         <section className="py-12 md:py-16 px-4 md:px-12 bg-gray-100 border-b border-black/5">
@@ -303,7 +273,6 @@ export default function SafariPackageTwoPage() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </motion.div>
                 </AnimatePresence>
               </div>
