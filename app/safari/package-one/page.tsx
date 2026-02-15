@@ -127,6 +127,13 @@ export default function SafariPackageOnePage() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_CAROUSEL_IMAGES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -244,12 +251,20 @@ export default function SafariPackageOnePage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Preferred date
+                    Preferred dates
                   </label>
-                  <input
-                    type="date"
-                    className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
-                  />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <input
+                      type="date"
+                      aria-label="Preferred start date"
+                      className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
+                    />
+                    <input
+                      type="date"
+                      aria-label="Preferred end date"
+                      className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
+                    />
+                  </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <input
@@ -294,7 +309,7 @@ export default function SafariPackageOnePage() {
 
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                 <div className="text-xs md:text-sm text-white/80 tracking-[0.25em] uppercase">
-                  Hero Shot {currentSlide + 1} / {HERO_CAROUSEL_IMAGES.length}
+                  {currentSlide + 1} / {HERO_CAROUSEL_IMAGES.length}
                 </div>
                 <div className="flex gap-3">
                   <button
