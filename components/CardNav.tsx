@@ -155,6 +155,23 @@ const CardNav: React.FC<CardNavProps> = ({
     if (el) cardsRef.current[i] = el;
   };
 
+  const getCardImage = (label: string) => {
+    switch (label) {
+      case 'Home':
+        return '/Chapter6.JPG';
+      case 'About':
+        return '/About.JPG';
+      case 'Works':
+        return '/Chapter1.JPG';
+      case 'Safari':
+        return '/SafariLand.JPG';
+      case 'Contact':
+        return '/Safari2.JPG';
+      default:
+        return '/SafariLand.JPG';
+    }
+  };
+
   return (
     <div
       className={`card-nav-container sticky top-4 md:top-6 z-[99] w-full max-w-[1100px] md:max-w-[1200px] mx-auto px-4 ${className}`}
@@ -203,31 +220,44 @@ const CardNav: React.FC<CardNavProps> = ({
           } md:flex-row md:items-end md:gap-[12px]`}
           aria-hidden={!isExpanded}
         >
-          {(items || []).map((item, idx) => (
-            <div
-              key={`${item.label}-${idx}`}
-              className="nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] border border-black min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
-              ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}
-            >
-              <div className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[22px]">
-                {item.label}
+          {(items || []).map((item, idx) => {
+            const bgImage = getCardImage(item.label);
+            return (
+              <div
+                key={`${item.label}-${idx}`}
+                className="nav-card select-none relative rounded-[calc(0.75rem-0.2rem)] border border-black min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%] overflow-hidden"
+                ref={setCardRef(idx)}
+                style={{ backgroundColor: item.bgColor }}
+              >
+                <div className="absolute inset-0">
+                  <img
+                    src={bgImage}
+                    alt={item.label}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/70 to-black/60" />
+                </div>
+                <div className="relative z-[1] flex h-full flex-col gap-2 p-[12px_16px] text-white">
+                  <div className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[22px]">
+                    {item.label}
+                  </div>
+                  <div className="nav-card-links mt-auto flex flex-col gap-[2px]">
+                    {item.links?.map((lnk, i) => (
+                      <a
+                        key={`${lnk.label}-${i}`}
+                        className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-80 text-[15px] md:text-[16px]"
+                        href={lnk.href}
+                        aria-label={lnk.ariaLabel}
+                      >
+                        <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
+                        {lnk.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div className="nav-card-links mt-auto flex flex-col gap-[2px]">
-                {item.links?.map((lnk, i) => (
-                  <a
-                    key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
-                    href={lnk.href}
-                    aria-label={lnk.ariaLabel}
-                  >
-                    <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
-                    {lnk.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </nav>
     </div>

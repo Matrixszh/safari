@@ -140,7 +140,8 @@ export default function Safari() {
                     <div className="space-y-3">
                       <span className="text-xs tracking-[0.3em] uppercase text-[#F7E07E]">Safari Package</span>
                       <h2 className="text-3xl md:text-5xl font-serif text-black">
-                        Terai Predator Circuit
+                        The Northern Strongholds
+Rajaji & Dudhwa
                       </h2>
                     </div>
                     <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
