@@ -110,17 +110,7 @@ export default function SafariPackageOnePage() {
 
   return (
     <ReactLenis root>
-      <main className=" bg-gray-100 min-h-screen text-black font-sans overflow-x-hidden">
-        <CardNav
-          logo="/logo.png"
-          logoAlt="Syed Nouman"
-          items={navItems}
-          baseColor="#ffffff"
-          menuColor="#000000"
-          buttonBgColor="#000000"
-          buttonTextColor="#ffffff"
-        />
-
+      <main className="bg-gray-100 min-h-screen text-black font-sans overflow-x-hidden">
         <section className="relative w-full min-h-[80vh] md:min-h-screen text-white">
           <div className="absolute inset-0">
             <AnimatePresence>
@@ -141,6 +131,19 @@ export default function SafariPackageOnePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/10" />
               </motion.div>
             </AnimatePresence>
+          </div>
+
+          <div className="relative z-10 pt-4">
+            <CardNav
+              logo="/logo.png"
+              logoAlt="Syed Nouman"
+              items={navItems}
+              baseColor="#ffffff"
+              menuColor="#000000"
+              buttonBgColor="#000000"
+              buttonTextColor="#ffffff"
+              className="top-0 md:top-0"
+            />
           </div>
 
           <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-10">
