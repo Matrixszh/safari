@@ -136,7 +136,7 @@ export default function SafariPackageOnePage() {
   return (
     <ReactLenis root>
       <main className="bg-gray-100 min-h-screen text-black font-sans overflow-x-hidden">
-        <section className="relative w-full min-h-[80vh] md:min-h-screen text-white">
+        <section className="relative w-full min-h-[50vh] md:min-h-screen text-white">
           <div className="absolute inset-0">
             <AnimatePresence>
               <motion.div
