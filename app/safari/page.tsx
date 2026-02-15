@@ -130,7 +130,7 @@ export default function Safari() {
           </section>
 
           <section className="pb-16 px-4 md:px-8 max-w-6xl mx-auto space-y-10">
-            <article className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
+            <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/Dudhwa.JPG"
                 alt="Rajaji and Dudhwa tiger walking on forest track"
@@ -156,7 +156,7 @@ export default function Safari() {
               </div>
             </article>
 
-            <article className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
+            <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/TPexplore.JPG"
                 alt="Tadoba and Pench tiger in blue forest light"
@@ -164,8 +164,8 @@ export default function Safari() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-10">
-                <div className="space-y-3">
+              <div className="absolute inset-0 flex flex-col justify-between items-end p-8 md:p-10">
+                <div className="space-y-3 text-right">
                   <span className="text-xs md:text-sm tracking-[0.35em] text-[#F7E07E] uppercase">
                     The Central Highlands
                   </span>
@@ -187,6 +187,7 @@ export default function Safari() {
             <SafariTopic 
               title="The Approach" 
               images={TOPIC_2_IMAGES}
+              showCameraSettings={false}
             >
               <ul className="space-y-6 text-left max-w-2xl mx-auto">
                 <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
@@ -208,6 +209,7 @@ export default function Safari() {
             <SafariTopic 
               title="What to Expect" 
               images={TOPIC_3_IMAGES}
+              showCameraSettings={false}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div className="bg-gray-50 p-6 border border-black/5 rounded-sm shadow-sm">

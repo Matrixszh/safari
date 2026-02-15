@@ -20,9 +20,10 @@ interface SafariTopicProps {
   title: string;
   children: React.ReactNode;
   images: ImageWithSettings[];
+  showCameraSettings?: boolean;
 }
 
-export default function SafariTopic({ title, children, images }: SafariTopicProps) {
+export default function SafariTopic({ title, children, images, showCameraSettings = true }: SafariTopicProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 60 }, [Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeSlide, setActiveSlide] = useState<number | null>(null);
@@ -50,6 +51,7 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
   }, [emblaApi, onSelect]);
 
   const handleSlideClick = (index: number) => {
+    if (!showCameraSettings) return;
     if (activeSlide === index) {
         setActiveSlide(null);
         emblaApi?.plugins()?.autoplay.play();
@@ -105,29 +107,31 @@ export default function SafariTopic({ title, children, images }: SafariTopicProp
                     />
                    
                    {/* Camera Settings Overlay */}
-                   <div className={`absolute bottom-6 right-6 flex items-end justify-end transition-all duration-500 ${activeSlide === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-                        <div className="bg-black/40 border border-[#F7E07E]/30 p-4 md:p-6 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            <div className="flex flex-col items-center gap-2">
-                                <span className="text-[#F7E07E] text-xs uppercase tracking-[0.2em] mb-2">Camera Settings</span>
-                                <div className="flex items-center gap-6 text-white font-light text-lg md:text-xl tracking-wide">
-                                    <div className="flex flex-col items-center">
-                                        <span className="text-white/50 text-[10px] uppercase tracking-widest mb-1">ISO</span>
-                                        {item.settings.iso}
-                                    </div>
-                                    <div className="w-[1px] h-8 bg-white/20" />
-                                    <div className="flex flex-col items-center">
-                                        <span className="text-white/50 text-[10px] uppercase tracking-widest mb-1">Aperture</span>
-                                        {item.settings.aperture}
-                                    </div>
-                                    <div className="w-[1px] h-8 bg-white/20" />
-                                    <div className="flex flex-col items-center">
-                                        <span className="text-white/50 text-[10px] uppercase tracking-widest mb-1">Shutter</span>
-                                        {item.settings.shutter}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                   </div>
+                   {showCameraSettings && (
+                     <div className={`absolute bottom-6 right-6 flex items-end justify-end transition-all duration-500 ${activeSlide === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                          <div className="bg-black/40 border border-[#F7E07E]/30 p-4 md:p-6 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                              <div className="flex flex-col items-center gap-2">
+                                  <span className="text-[#F7E07E] text-xs uppercase tracking-[0.2em] mb-2">Camera Settings</span>
+                                  <div className="flex items-center gap-6 text-white font-light text-lg md:text-xl tracking-wide">
+                                      <div className="flex flex-col items-center">
+                                          <span className="text-white/50 text-[10px] uppercase tracking-widest mb-1">ISO</span>
+                                          {item.settings.iso}
+                                      </div>
+                                      <div className="w-[1px] h-8 bg-white/20" />
+                                      <div className="flex flex-col items-center">
+                                          <span className="text-white/50 text-[10px] uppercase tracking-widest mb-1">Aperture</span>
+                                          {item.settings.aperture}
+                                      </div>
+                                      <div className="w-[1px] h-8 bg-white/20" />
+                                      <div className="flex flex-col items-center">
+                                          <span className="text-white/50 text-[10px] uppercase tracking-widest mb-1">Shutter</span>
+                                          {item.settings.shutter}
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                     </div>
+                   )}
                 </div>
               ))}
             </div>
