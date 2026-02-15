@@ -132,7 +132,7 @@ export default function Safari() {
           <section className="pb-16 px-4 md:px-8 max-w-6xl mx-auto space-y-10">
             <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/raja.JPG"
+                src="/RDExplore.JPG"
                 alt="Rajaji and Dudhwa tiger walking on forest track"
                 fill
                 className="object-cover"
@@ -183,7 +183,7 @@ export default function Safari() {
             </article>
           </section>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col bg-gray-100">
             <SafariTopic 
               title="The Approach" 
               images={TOPIC_2_IMAGES}
@@ -225,7 +225,7 @@ export default function Safari() {
           </div>
 
           {/* Strategic Wins Section */}
-          <section className="py-24 bg-white text-gray-900 px-4 md:px-12 border-t border-black/5">
+          <section className="py-24 bg-gray-100 text-gray-900 px-4 md:px-12 border-t border-black/5">
             <header className="mb-20 text-center">
               <h2 className="text-4xl md:text-6xl font-serif mb-6 tracking-wide bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-sm">Strategic Wins</h2>
               <div className="h-0.5 w-24 bg-[#D4AF37] mx-auto" />

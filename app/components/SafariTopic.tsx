@@ -62,7 +62,7 @@ export default function SafariTopic({ title, children, images, showCameraSetting
   };
 
   return (
-    <section className="w-full bg-white/80 py-12 border-b border-y-amber-400 last:border-0">
+    <section className="w-full bg-gray-100 py-12 border-b border-y-amber-400 last:border-0">
       <div className="max-w-7xl mx-auto px-4 md:px-24">
         
         {/* Content Section */}
