@@ -50,10 +50,10 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-4xl mx-auto text-center space-y-12"
+          className="max-w-8xl mx-auto text-center space-y-12"
         >
           <p className="text-lg md:text-2xl lg:text-2xl font-light leading-relaxed bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent ">
-            "Explore how Syed Nouman’s love for childhood wildlife transitioned into professional art."
+            Explore how Syed Nouman’s love for childhood wildlife transitioned into professional art.
           </p>
           
           <div className="flex justify-center">

@@ -53,10 +53,6 @@ export default function Footer() {
                 <Mail className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-gray-500 font-light text-sm mt-4">
-              Based in the Wild<br />
-              Available for assignments worldwide.
-            </p>
           </div>
         </div>
 

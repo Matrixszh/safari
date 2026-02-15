@@ -171,6 +171,14 @@ By focusing on transient elements and natural behaviour, Syed captures rare, int
                   <p>
                     <span className="font-bold ">Note on the Craft:</span> All images are captured in-camera using natural light. No digital composites are used to create the "unreal" atmospheres; they are simply the result of waiting for the moment reality tilts.
                   </p>
+                  <div className="pt-6 border-t border-gray-200">
+                    <h3 className="text-sm md:text-base tracking-[0.3em] uppercase text-[#D4AF37] mb-3">
+                      Conservation Statement
+                    </h3>
+                    <p>
+                      Wildlife photography comes with responsibility. I follow ethical guidelines to ensure animals are never stressed, baited, or disturbed for the sake of an image. If my work encourages even one person to care more deeply about wildlife and conservation, it’s doing its job.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="pt-8">
