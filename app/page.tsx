@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import BottomNav from "./components/BottomNav";
 import HeroSlideshow from "./components/HeroSlideshow";
 import ButtonCreativeRight from "./components/ButtonF";
@@ -44,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* Quote Section */}
-      <section className="bg-black py-32 px-6 flex flex-col items-center justify-center min-h-[50vh]">
+      <section className="bg-gray-100 py-32 px-6 flex flex-col items-center justify-center min-h-[50vh]">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-4xl mx-auto text-center space-y-12"
         >
-          <p className="text-xl md:text-3xl lg:text-3xl font-extralight leading-relaxed bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+          <p className="text-lg md:text-2xl lg:text-2xl font-light leading-relaxed bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent ">
             "Explore how Syed Nouman’s love for childhood wildlife transitioned into professional art."
           </p>
           
