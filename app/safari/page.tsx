@@ -122,88 +122,73 @@ export default function Safari() {
           buttonTextColor="#ffffff"
         />
         <div className="bg-white">
-          {/* Page Title Header */}
-          <header className="relative w-full grid place-content-center py-24">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif tracking-tighter bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-sm opacity-90">
-                The Safari
-              </h1>
-              <p className="mt-6 text-lg md:text-xl font-light tracking-widest text-gray-600 uppercase">
-               The Conquest of Wild
-              </p>
-            </motion.div>
-          </header>
-          
-          {/* Topics */}
-          <div className="flex flex-col">
-            <section className="w-full bg-white py-16 border-b border-amber-400">
-              <div className="max-w-7xl mx-auto px-4 md:px-12 space-y-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                  <div className="order-2 md:order-1 space-y-6">
-                    <div className="space-y-3">
-                      <span className="text-md tracking-[0.3em] uppercase text-amber-400"> The Northern Strongholds</span>
-                      <h2 className="text-3xl md:text-5xl font-serif text-black">
-                       
-Rajaji & Dudhwa
-                      </h2>
-                    </div>
-                    <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
-                      Where the Shivaliks break, Rajaji Tiger Reserve emerges as a rugged corridor of dry deciduous forests and seasonal riverbeds. Defined by stone and silence, a landscape where migration paths of the Asian Elephants carve through the foothills of the North. Within these golden, dust-lit shadows, the leopards here find a fortress of rock and river.
+          <section className="pt-16 pb-10 px-4 md:px-8 max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl md:text-4xl font-serif tracking-[0.35em] uppercase bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent">
+              Safari with Nouman
+            </h1>
+            <p className="mt-8 text-lg md:text-xl font-light leading-relaxed text-gray-800">
+              Join Syed For A Transition From Mere Sightings To Disciplined Fieldcraft. These Safaris Are Curated For Those Seeking More Than A Checklist; Focusing On Precision Tracking, Calculus Of Light, And The Patience Required To Witness Moments In Their Rawest Form.
+            </p>
+            <p className="mt-6 text-lg md:text-xl font-light leading-relaxed text-gray-800">
+              Whether You Are Behind A Lens Or On A Leisure Journey To Witness The Wild&apos;s True Rhythm, The Focus Remains The Same: Elite Positioning And Deep Immersion.
+            </p>
+          </section>
 
-The heart of all Sal, Dudhwa Tiger Reserve stands as a massive, ancient expanse of the Terai’s alluvial landscape. Defined by moisture and mystery, a place where the Himalayan foothills meet the swamps, creating a permanent, ethereal haze. Within these deep indigo shadows, the giants of the subcontinent move undisturbed. A stronghold for the apex predators. These two reserves form the ultimate stage for the Quiet Arts.
-                    </p>
-                    <ButtonCreativeRight
-                      label="Explore"
-                      href="/safari/package-one"
-                      className="mt-4 inline-block"
-                    />
-                  </div>
-                  <div className="order-1 md:order-2 relative h-64 md:h-[420px] w-full rounded-sm overflow-hidden">
-                    <Image
-                      src="/SafariLand.JPG"
-                      alt="Safari landscape"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+          <section className="pb-16 px-4 md:px-8 max-w-6xl mx-auto space-y-10">
+            <article className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/SafariLand.JPG"
+                alt="Rajaji and Dudhwa tiger walking on forest track"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-10">
+                <div className="space-y-3">
+                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#F7E07E] uppercase">
+                    The Northern Strongholds
+                  </span>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
+                    Rajaji &amp; Dudhwa
+                  </h2>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                  <div className="relative h-64 md:h-[420px] w-full rounded-sm overflow-hidden">
-                    <Image
-                      src="/Safari2.JPG"
-                      alt="Riverine safari scene"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="space-y-6">
-                    <div className="space-y-3">
-                      <span className="text-md tracking-[0.3em] uppercase text-amber-400">The Central Highlands</span>
-                      <h2 className="text-3xl md:text-5xl font-serif text-black">
-               
-Tadoba & Pench
-                      </h2>
-                    </div>
-                    <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
-                      Land of Teak and Tiger, Tadoba stands as a rugged stronghold of deciduous hills and expansive lakebeds. This sun-drenched terrain flows into the teak-canopied ridges of Pench; the legendary Satpura range. From high-contrast shadows to life-giving riverbanks, these reserves offer a masterclass in tracking through golden light and the iron-rich dust of India’s central heartland.
-                    </p>
-                    <ButtonCreativeRight
-                      label="Explore"
-                      href="/safari/package-two"
-                      className="mt-4 inline-block"
-                    />
-                  </div>
+                <div>
+                  <ButtonCreativeRight
+                    label="Explore"
+                    href="/safari/package-one"
+                  />
                 </div>
               </div>
-            </section>
+            </article>
 
+            <article className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/Safari2.JPG"
+                alt="Tadoba and Pench tiger in blue forest light"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-10">
+                <div className="space-y-3">
+                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#F7E07E] uppercase">
+                    The Central Highlands
+                  </span>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
+                    Tadoba &amp; Pench
+                  </h2>
+                </div>
+                <div>
+                  <ButtonCreativeRight
+                    label="Explore"
+                    href="/safari/package-two"
+                  />
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <div className="flex flex-col">
             <SafariTopic 
               title="The Approach" 
               images={TOPIC_2_IMAGES}
