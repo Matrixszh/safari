@@ -64,13 +64,14 @@ const navItems: CardNavItem[] = [
 ];
 
 const HERO_SLIDES = [
-  {
-    src: "/Dudhwa.JPG",
-    alt: "Rajaji Tiger Reserve terrain at dusk"
-  },
+  
   {
     src: "/SafariLand.JPG",
     alt: "Dudhwa Tiger Reserve landscape in golden light"
+  },
+  {
+    src: "/RDhero.JPG",
+    alt: "Rajaji Tiger Reserve terrain at dusk"
   }
 ];
 
@@ -109,7 +110,7 @@ export default function SafariPackageOnePage() {
 
   return (
     <ReactLenis root>
-      <main className="pt-5 bg-gray-100 min-h-screen text-black font-sans overflow-x-hidden">
+      <main className=" bg-gray-100 min-h-screen text-black font-sans overflow-x-hidden">
         <CardNav
           logo="/logo.png"
           logoAlt="Syed Nouman"
@@ -122,14 +123,14 @@ export default function SafariPackageOnePage() {
 
         <section className="relative w-full min-h-[80vh] md:min-h-screen text-white">
           <div className="absolute inset-0">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               <motion.div
                 key={heroIndex}
                 className="absolute inset-0"
-                initial={{ opacity: 0, scale: 1.03, x: 40 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                exit={{ opacity: 0, scale: 0.98, x: -40 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
               >
                 <Image
                   src={HERO_SLIDES[heroIndex].src}
@@ -146,7 +147,6 @@ export default function SafariPackageOnePage() {
             {HERO_SLIDES.map((_, index) => (
               <button
                 key={index}
-                type="button"
                 onClick={() => setHeroIndex(index)}
                 className={`h-1 rounded-full transition-all duration-300 ${
                   index === heroIndex
@@ -162,7 +162,7 @@ export default function SafariPackageOnePage() {
         <section className="py-12 md:py-16 px-4 md:px-12 bg-gray-100 border-b border-black/5">
           <div className="max-w-4xl mx-auto space-y-6">
             <span className="text-xs tracking-[0.3em] uppercase text-[#D4AF37]">
-              Terai Predator Circuit
+              THE northern strongholds
             </span>
             <h1 className="text-3xl md:text-5xl font-serif leading-tight text-black">
               Rajaji &amp; Dudhwa
