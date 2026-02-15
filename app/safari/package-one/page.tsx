@@ -284,14 +284,13 @@ export default function SafariPackageOnePage() {
               </div>
             </form>
 
-            <div className="relative h-72 md:h-full min-h-[280px] rounded-sm overflow-hidden bg-black">
+            <div className="relative h-120 md:h-full min-h-[280px] rounded-sm overflow-hidden bg-black">
               <Image
                 src={HERO_CAROUSEL_IMAGES[currentSlide].src}
                 alt={HERO_CAROUSEL_IMAGES[currentSlide].alt}
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                 <div className="text-xs md:text-sm text-white/80 tracking-[0.25em] uppercase">
