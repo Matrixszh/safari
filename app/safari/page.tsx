@@ -256,7 +256,7 @@ export default function Safari() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
+                <div className="relative h-[60vh] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
                     src="/Strategic1.JPG" 
                     alt="Solitary Female Tiger" 
@@ -288,7 +288,7 @@ export default function Safari() {
                     </div>
                   </div>
                 </div>
-                <div className="order-2 md:order-1 relative h-[400px] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
+                <div className="order-2 md:order-1 relative h-[60vh] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
                   <Image 
                     src="/Strategic2.JPG" 
                     alt="Scissor and Cubs" 
@@ -299,7 +299,36 @@ export default function Safari() {
                 </div>
               </div>
 
-              {/* Case Study 3: The Spotted Ghost */}
+              {/* Case Study 3: Calculus of the Roar */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <h3 className="text-2xl md:text-3xl font-light text-black border-l-2 border-[#D4AF37] pl-6">
+                    Strategic Win: Calculus of the Roar
+                  </h3>
+                  <div className="space-y-6 text-lg font-light text-gray-600 leading-relaxed">
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Scenario</strong>
+                      <p>A dominant male vocalizing deep within the thicket. While others followed the sound into a congested trail, we chose instead to follow the direction of his call, reading his movement rather than the crowd.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
+                      <p>By calculating his trajectory through audio cues, we bypassed the stationary vehicles to secure a downwind advantage, positioning exactly where the forest trail opened and the background ran clean.</p>
+                    </div>
+                    <div>
+                      <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
+                      <p>First Gypsy on site. The calculation delivered an unobstructed flank shot, capturing the anatomical power and tricep definition of a male in his prime—details usually lost in the chaos of a chase.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-[30vh] md:h-[60vh] w-full rounded-sm overflow-hidden group shadow-lg">
+                  <CaseStudySlideshow 
+                    images={["/Strategicwin4.JPG"]} 
+                    alt="Dominant Male Tiger Roaring"
+                  />
+                </div>
+              </div>
+              
+              {/* Case Study 4: The Spotted Ghost */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8">
                   <h3 className="text-2xl md:text-3xl font-light text-black border-l-2 border-[#D4AF37] pl-6">
@@ -320,15 +349,13 @@ export default function Safari() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] md:h-[100vh] w-full rounded-sm overflow-hidden group shadow-lg">
+                <div className="relative h-[30vh] md:h-[60vh] w-full rounded-sm overflow-hidden group shadow-lg">
                   <CaseStudySlideshow 
                     images={["/Strategic3.JPG", "/Strategic4.JPG"]} 
                     alt="Leopard Cub on Branch"
                   />
                 </div>
               </div>
-
-            
 
             </div>
           </section>
