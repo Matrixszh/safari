@@ -106,7 +106,7 @@ const TOPIC_3_IMAGES = [
 export default function Safari() {
   return (
     <ReactLenis root>
-      <main className="pt-5 w-full font-sans">
+      <main className="bg-gray-100 pt-5 w-full font-sans">
         <CardNav
           logo="/logo.png"
           logoAlt="Syed Nouman"
@@ -116,7 +116,7 @@ export default function Safari() {
           buttonBgColor="#000000"
           buttonTextColor="#ffffff"
         />
-        <div className="bg-white">
+        <div className="bg-gray-100">
           <section className="pt-16 pb-10 px-4 md:px-8 max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-serif tracking-[0.35em] uppercase bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent">
               Safari with Nouman
