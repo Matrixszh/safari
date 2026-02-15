@@ -122,13 +122,22 @@ export default function Safari() {
           buttonTextColor="#ffffff"
         />
         <div className="bg-white">
-          {/* Section Title Header */}
-          <header className="relative w-full grid place-content-center pt-12 h-full">
-            <h1
-              className="text-4xl md:text-7xl font-light tracking-[0.2em] leading-tight bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent text-center px-4 uppercase drop-shadow-sm"
+          {/* Page Title Header */}
+          <header className="relative w-full grid place-content-center py-24">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-center"
             >
-              Safari with Nouman
-            </h1>
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif tracking-tighter bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-sm opacity-90">
+                The Safari
+              </h1>
+              <p className="mt-6 text-lg md:text-xl font-light tracking-widest text-gray-600 uppercase">
+               The Conquest of Wild
+              </p>
+            </motion.div>
           </header>
           
           {/* Topics */}

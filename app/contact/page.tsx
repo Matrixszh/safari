@@ -154,8 +154,26 @@ export default function ContactPage() {
           buttonTextColor="#ffffff"
         />
 
+        {/* Page Title Header */}
+        <header className="relative w-full grid place-content-center pt-16 pb-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-center"
+          >
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-sm opacity-90">
+              Reach Out
+            </h1>
+            <p className="mt-6 text-lg md:text-xl font-light tracking-widest text-gray-600 uppercase">
+              help us guide your explorations
+            </p>
+          </motion.div>
+        </header>
+
         {/* Content Section */}
-        <section className="py-24 px-4 md:px-12 max-w-7xl mx-auto">
+        <section className="py-16 px-4 md:px-12 max-w-7xl mx-auto">
           
           {/* Quote Section */}
           <motion.div 

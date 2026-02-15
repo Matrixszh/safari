@@ -92,9 +92,27 @@ export default function About() {
         buttonTextColor="#ffffff"
       />
 
+      {/* Page Title Header */}
+      <header className="relative w-full grid place-content-center py-16 bg-white">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif tracking-tighter bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent drop-shadow-sm opacity-90">
+            The Story
+          </h1>
+          <p className="mt-6 text-lg md:text-xl font-light tracking-widest text-gray-600 uppercase">
+            the man behind the lens
+          </p>
+        </motion.div>
+      </header>
+
       {/* Story Header & Carousel Section */}
-      <div className="bg-white">   
-        {/* Redesigned About Section - Text Left, Image Right */ }
+      <div className="bg-white">
+        {/* Redesigned About Section - Text Left, Image Right */}
         <div className="pt-10 max-w-[1400px] mx-auto px-6 pb-24 md:pb-32">
           <div className="flex flex-col md:flex-row-reverse gap-12 md:gap-24 items-center">
             {/* Image Slideshow (Right on Desktop) */}
