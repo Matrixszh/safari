@@ -8,9 +8,9 @@ import FramerMoveableThumbnails from "../components/MovableCarousal";
 import ButtonCreativeRight from "../components/ButtonF";
 
 const SLIDESHOW_IMAGES = [
-  "/About.JPG",
-  "/About2.JPG",
-  "/About3.JPG"
+  "/About3.JPG",
+  "/Aboutme4.JPG",
+  "/Aboutme5.jpg"
 ];
 
 const navItems: CardNavItem[] = [
