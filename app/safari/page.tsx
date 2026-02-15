@@ -132,7 +132,7 @@ export default function Safari() {
           <section className="pb-16 px-4 md:px-8 max-w-6xl mx-auto space-y-10">
             <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/Dudhwa.JPG"
+                src="/raja.JPG"
                 alt="Rajaji and Dudhwa tiger walking on forest track"
                 fill
                 className="object-cover"
