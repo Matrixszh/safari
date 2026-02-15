@@ -21,7 +21,7 @@ function ButtonCreativeRight({ label = 'About', href = '#', className = '' }: Bu
           <span>{label}</span>
           <ArrowRight className="w-4 h-4" />
         </div>
-        <div className='absolute top-[40%] left-[20%] h-2 w-2 group-hover:h-full group-hover:w-full rounded-lg bg-black scale-[1] dark:group-hover:bg-[#e7cb6e] group-hover:bg-[#263381] group-hover:scale-[1.8] transition-all duration-300 group-hover:top-[0%] group-hover:left-[0%] '></div>
+        <div className='absolute top-[40%] left-[20%] h-2 w-2 group-hover:h-full group-hover:w-full rounded-lg bg-black scale-[1] group-hover:bg-gradient-to-r group-hover:from-[#F7E07E] group-hover:via-[#D4AF37] group-hover:to-[rgb(140,109,31)] group-hover:scale-[1.8] transition-all duration-300 group-hover:top-[0%] group-hover:left-[0%] '></div>
       </div>
     </Link>
   );

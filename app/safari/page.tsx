@@ -138,17 +138,19 @@ export default function Safari() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                   <div className="order-2 md:order-1 space-y-6">
                     <div className="space-y-3">
-                      <span className="text-xs tracking-[0.3em] uppercase text-[#F7E07E]">Safari Package</span>
+                      <span className="text-md tracking-[0.3em] uppercase text-amber-400"> The Northern Strongholds</span>
                       <h2 className="text-3xl md:text-5xl font-serif text-black">
-                        The Northern Strongholds
+                       
 Rajaji & Dudhwa
                       </h2>
                     </div>
                     <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
-                      A focused itinerary built around North India&apos;s predator landscapes. Ideal if you want a structured introduction to the parks, with time for both viewing and photography.
+                      Where the Shivaliks break, Rajaji Tiger Reserve emerges as a rugged corridor of dry deciduous forests and seasonal riverbeds. Defined by stone and silence, a landscape where migration paths of the Asian Elephants carve through the foothills of the North. Within these golden, dust-lit shadows, the leopards here find a fortress of rock and river.
+
+The heart of all Sal, Dudhwa Tiger Reserve stands as a massive, ancient expanse of the Terai’s alluvial landscape. Defined by moisture and mystery, a place where the Himalayan foothills meet the swamps, creating a permanent, ethereal haze. Within these deep indigo shadows, the giants of the subcontinent move undisturbed. A stronghold for the apex predators. These two reserves form the ultimate stage for the Quiet Arts.
                     </p>
                     <ButtonCreativeRight
-                      label="Explore this safari"
+                      label="Explore"
                       href="/safari/package-one"
                       className="mt-4 inline-block"
                     />
@@ -174,16 +176,17 @@ Rajaji & Dudhwa
                   </div>
                   <div className="space-y-6">
                     <div className="space-y-3">
-                      <span className="text-xs tracking-[0.3em] uppercase text-[#F7E07E]">Safari Package</span>
+                      <span className="text-md tracking-[0.3em] uppercase text-amber-400">The Central Highlands</span>
                       <h2 className="text-3xl md:text-5xl font-serif text-black">
-                        Rivers & Grasslands Route
+               
+Tadoba & Pench
                       </h2>
                     </div>
                     <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
-                      Built for guests who want variety in terrain and sightings. This circuit balances time on the rivers, open grasslands, and deep sal forests.
+                      Land of Teak and Tiger, Tadoba stands as a rugged stronghold of deciduous hills and expansive lakebeds. This sun-drenched terrain flows into the teak-canopied ridges of Pench; the legendary Satpura range. From high-contrast shadows to life-giving riverbanks, these reserves offer a masterclass in tracking through golden light and the iron-rich dust of India’s central heartland.
                     </p>
                     <ButtonCreativeRight
-                      label="Explore this safari"
+                      label="Explore"
                       href="/safari/package-two"
                       className="mt-4 inline-block"
                     />
