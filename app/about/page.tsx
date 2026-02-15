@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import BottomNav from "../components/BottomNav";
+import CardNav, { CardNavItem } from "../../components/CardNav";
 import FramerMoveableThumbnails from "../components/MovableCarousal";
 import ButtonCreativeRight from "../components/ButtonF";
 
@@ -11,6 +11,63 @@ const SLIDESHOW_IMAGES = [
   "/About.JPG",
   "/About2.JPG",
   "/About3.JPG"
+];
+
+const navItems: CardNavItem[] = [
+  {
+    label: "Home",
+    bgColor: "#ffffff",
+    textColor: "#111827",
+    links: [
+      { label: "Home", href: "/", ariaLabel: "Go to home page" }
+    ]
+  },
+  {
+    label: "About",
+    bgColor: "#f9fafb",
+    textColor: "#111827",
+    links: [
+      { label: "About", href: "/about", ariaLabel: "Learn about me" }
+    ]
+  },
+  {
+    label: "Works",
+    bgColor: "#f3f4f6",
+    textColor: "#111827",
+    links: [
+      { label: "Works", href: "/work", ariaLabel: "View my work" }
+    ]
+  },
+  {
+    label: "Safari",
+    bgColor: "#e5e7eb",
+    textColor: "#111827",
+    links: [
+      {
+        label: "Safari",
+        href: "/safari",
+        ariaLabel: "Go to safari page"
+      },
+      {
+        label: "Terai Predator Circuit",
+        href: "/safari/package-one",
+        ariaLabel: "View Terai Predator Circuit safari package"
+      },
+      {
+        label: "Rivers & Grasslands Route",
+        href: "/safari/package-two",
+        ariaLabel: "View Rivers and Grasslands Route safari package"
+      }
+    ]
+  },
+  {
+    label: "Contact",
+    bgColor: "#fefce8",
+    textColor: "#111827",
+    links: [
+      { label: "Contact", href: "/contact", ariaLabel: "Get in touch" }
+    ]
+  }
 ];
 
 export default function About() {
@@ -24,21 +81,21 @@ export default function About() {
   }, []);
 
   return (
-    <main className="min-h-screen font-sans bg-white">
-      {/* Hero Section */}
-      <section className="relative w-full h-auto bg-black">
-        {/* Bottom Navigation */}
-        <div className="relative h-20 md:h-28">
-            <BottomNav openDirection="down" variant="header" />
-        </div>
-      </section>
+    <main className="pt-5 min-h-screen font-sans bg-white">
+      <CardNav
+        logo="/logo.png"
+        logoAlt="Syed Nouman"
+        items={navItems}
+        baseColor="#ffffff"
+        menuColor="#000000"
+        buttonBgColor="#000000"
+        buttonTextColor="#ffffff"
+      />
 
       {/* Story Header & Carousel Section */}
-      <div className="bg-white">
-     
-        
+      <div className="bg-white">   
         {/* Redesigned About Section - Text Left, Image Right */ }
-        <div className="pt-20 max-w-[1400px] mx-auto px-6 pb-24 md:pb-32">
+        <div className="pt-10 max-w-[1400px] mx-auto px-6 pb-24 md:pb-32">
           <div className="flex flex-col md:flex-row-reverse gap-12 md:gap-24 items-center">
             {/* Image Slideshow (Right on Desktop) */}
             <div className="w-full md:w-1/2 relative h-[600px] md:h-[700px]">

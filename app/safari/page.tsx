@@ -4,15 +4,64 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactLenis } from "lenis/react";
-import BottomNav from "../components/BottomNav";
+import CardNav, { CardNavItem } from "../../components/CardNav";
 import SafariTopic from "../components/SafariTopic";
+import ButtonCreativeRight from "../components/ButtonF";
 
-// Mock Data for Images
-const TOPIC_1_IMAGES = [
-  { 
-    src: "/SafariLand.JPG", 
-    alt: "Lion in Grass",
-    settings: { iso: "400", aperture: "f/2.8", shutter: "1/1000s" }
+const navItems: CardNavItem[] = [
+  {
+    label: "Home",
+    bgColor: "#ffffff",
+    textColor: "#111827",
+    links: [
+      { label: "Home", href: "/", ariaLabel: "Go to home page" }
+    ]
+  },
+  {
+    label: "About",
+    bgColor: "#f9fafb",
+    textColor: "#111827",
+    links: [
+      { label: "About", href: "/about", ariaLabel: "Learn about me" }
+    ]
+  },
+  {
+    label: "Works",
+    bgColor: "#f3f4f6",
+    textColor: "#111827",
+    links: [
+      { label: "Works", href: "/work", ariaLabel: "View my work" }
+    ]
+  },
+  {
+    label: "Safari",
+    bgColor: "#e5e7eb",
+    textColor: "#111827",
+    links: [
+      {
+        label: "Safari",
+        href: "/safari",
+        ariaLabel: "Go to safari page"
+      },
+      {
+        label: "Terai Predator Circuit",
+        href: "/safari/package-one",
+        ariaLabel: "View Terai Predator Circuit safari package"
+      },
+      {
+        label: "Rivers & Grasslands Route",
+        href: "/safari/package-two",
+        ariaLabel: "View Rivers and Grasslands Route safari package"
+      }
+    ]
+  },
+  {
+    label: "Contact",
+    bgColor: "#fefce8",
+    textColor: "#111827",
+    links: [
+      { label: "Contact", href: "/contact", ariaLabel: "Get in touch" }
+    ]
   }
 ];
 
@@ -62,14 +111,16 @@ const TOPIC_3_IMAGES = [
 export default function Safari() {
   return (
     <ReactLenis root>
-      <main className="w-full font-sans bg-black">
-        {/* Hero Section */}
-        <section className="relative w-full h-auto bg-black">
-          {/* Bottom Navigation */}
-          <div className="relative h-20 md:h-28">
-             <BottomNav openDirection="down" variant="header" />
-          </div>
-        </section>
+      <main className="pt-5 w-full font-sans">
+        <CardNav
+          logo="/logo.png"
+          logoAlt="Syed Nouman"
+          items={navItems}
+          baseColor="#ffffff"
+          menuColor=""
+          buttonBgColor="#000000"
+          buttonTextColor="#ffffff"
+        />
         <div className="bg-white">
           {/* Section Title Header */}
           <header className="relative w-full grid place-content-center pt-12 h-full">
@@ -82,17 +133,64 @@ export default function Safari() {
           
           {/* Topics */}
           <div className="flex flex-col">
-            {/* Topic 1: Tracking the Giants */}
-            <SafariTopic 
-              title="Tracking the Giants" 
-              images={TOPIC_1_IMAGES}
-            >
-              <p>
-                Join me in the field for a private safari experience centered on patience and a shared appreciation for the wild. Whether you are behind a lens or simply there to witness the North’s great predators, these trips are designed for those who want to spend time truly observing the rhythm of the forest.
-              </p>
-            </SafariTopic>
+            <section className="w-full bg-white py-16 border-b border-amber-400">
+              <div className="max-w-7xl mx-auto px-4 md:px-12 space-y-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                  <div className="order-2 md:order-1 space-y-6">
+                    <div className="space-y-3">
+                      <span className="text-xs tracking-[0.3em] uppercase text-[#F7E07E]">Safari Package</span>
+                      <h2 className="text-3xl md:text-5xl font-serif text-black">
+                        Terai Predator Circuit
+                      </h2>
+                    </div>
+                    <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
+                      A focused itinerary built around North India&apos;s predator landscapes. Ideal if you want a structured introduction to the parks, with time for both viewing and photography.
+                    </p>
+                    <ButtonCreativeRight
+                      label="Explore this safari"
+                      href="/safari/package-one"
+                      className="mt-4 inline-block"
+                    />
+                  </div>
+                  <div className="order-1 md:order-2 relative h-64 md:h-[420px] w-full rounded-sm overflow-hidden">
+                    <Image
+                      src="/SafariLand.JPG"
+                      alt="Safari landscape"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
 
-            {/* Topic 2: The Approach */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                  <div className="relative h-64 md:h-[420px] w-full rounded-sm overflow-hidden">
+                    <Image
+                      src="/Safari2.JPG"
+                      alt="Riverine safari scene"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <span className="text-xs tracking-[0.3em] uppercase text-[#F7E07E]">Safari Package</span>
+                      <h2 className="text-3xl md:text-5xl font-serif text-black">
+                        Rivers & Grasslands Route
+                      </h2>
+                    </div>
+                    <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
+                      Built for guests who want variety in terrain and sightings. This circuit balances time on the rivers, open grasslands, and deep sal forests.
+                    </p>
+                    <ButtonCreativeRight
+                      label="Explore this safari"
+                      href="/safari/package-two"
+                      className="mt-4 inline-block"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
             <SafariTopic 
               title="The Approach" 
               images={TOPIC_2_IMAGES}
@@ -121,7 +219,7 @@ export default function Safari() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div className="bg-gray-50 p-6 border border-black/5 rounded-sm shadow-sm">
                   <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Private Vehicles</strong>
-                  <span className="text-gray-800 text-lg font-light leading-relaxed">Your safari is custom-tailored to your pace. We don't rush sightings and prioritize quiet areas whenever possible.</span>
+                  <span className="text-gray-800 text-lg font-light leading-relaxed">Your safari is custom-tailored to your pace. We don&apos;t rush sightings and prioritize quiet areas whenever possible.</span>
                 </div>
                 <div className="bg-gray-50 p-6 border border-black/5 rounded-sm shadow-sm">
                   <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Authenticity</strong>
@@ -184,7 +282,7 @@ export default function Safari() {
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
-                      <p>We chose a specific route to intercept them head-on. This was only possible by anticipating their direction of movement. A calculation rooted in a deep understanding of the territory and knowing this mother named ‘Scissor’ since she was a cub herself.</p>
+                      <p>We chose a specific route to intercept them head-on. This was only possible by anticipating their direction of movement. A calculation rooted in a deep understanding of the territory and knowing this mother named Scissor since she was a cub herself.</p>
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
@@ -212,7 +310,7 @@ export default function Safari() {
                   <div className="space-y-6 text-lg font-light text-gray-600 leading-relaxed">
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Scenario</strong>
-                      <p>A mother leopard and her cubs were active near the road. As the mother moved, the line of vehicles moved with her, creating a chaotic "chase" dynamic.</p>
+                      <p>A mother leopard and her cubs were active near the road. As the mother moved, the line of vehicles moved with her, creating a chaotic chase dynamic.</p>
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
@@ -220,7 +318,7 @@ export default function Safari() {
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
-                      <p>While the other vehicles were stuck in a bottleneck behind us, we were perfectly aligned. The cub climbed almost where we anticipated, giving us an unobstructed, eye-level portrait of the "Spotted Ghost" in the making.</p>
+                      <p>While the other vehicles were stuck in a bottleneck behind us, we were perfectly aligned. The cub climbed almost where we anticipated, giving us an unobstructed, eye-level portrait of the Spotted Ghost in the making.</p>
                     </div>
                   </div>
                 </div>

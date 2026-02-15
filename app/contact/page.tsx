@@ -1,12 +1,69 @@
-"use client";
+ "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
-import BottomNav from "../components/BottomNav";
+import CardNav, { CardNavItem } from "../../components/CardNav";
 import emailjs from "@emailjs/browser";
 import { Check } from "lucide-react";
+ 
+const navItems: CardNavItem[] = [
+  {
+    label: "Home",
+    bgColor: "#ffffff",
+    textColor: "#111827",
+    links: [
+      { label: "Home", href: "/", ariaLabel: "Go to home page" }
+    ]
+  },
+  {
+    label: "About",
+    bgColor: "#f9fafb",
+    textColor: "#111827",
+    links: [
+      { label: "About", href: "/about", ariaLabel: "Learn about me" }
+    ]
+  },
+  {
+    label: "Works",
+    bgColor: "#f3f4f6",
+    textColor: "#111827",
+    links: [
+      { label: "Works", href: "/work", ariaLabel: "View my work" }
+    ]
+  },
+  {
+    label: "Safari",
+    bgColor: "#e5e7eb",
+    textColor: "#111827",
+    links: [
+      {
+        label: "Safari",
+        href: "/safari",
+        ariaLabel: "Go to safari page"
+      },
+      {
+        label: "Terai Predator Circuit",
+        href: "/safari/package-one",
+        ariaLabel: "View Terai Predator Circuit safari package"
+      },
+      {
+        label: "Rivers & Grasslands Route",
+        href: "/safari/package-two",
+        ariaLabel: "View Rivers and Grasslands Route safari package"
+      }
+    ]
+  },
+  {
+    label: "Contact",
+    bgColor: "#fefce8",
+    textColor: "#111827",
+    links: [
+      { label: "Contact", href: "/contact", ariaLabel: "Get in touch" }
+    ]
+  }
+];
 
 export default function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -86,13 +143,16 @@ export default function ContactPage() {
 
   return (
     <ReactLenis root>
-      <main className="bg-white min-h-screen text-black font-sans overflow-x-hidden">
-        {/* Safari-style Header */}
-        <section className="relative w-full h-auto bg-black">
-          <div className="relative h-20 md:h-28">
-             <BottomNav openDirection="down" variant="header" />
-          </div>
-        </section>
+      <main className="pt-5 bg-white min-h-screen text-black font-sans overflow-x-hidden">
+        <CardNav
+          logo="/logo.png"
+          logoAlt="Syed Nouman"
+          items={navItems}
+          baseColor="#ffffff"
+          menuColor="#000000"
+          buttonBgColor="#000000"
+          buttonTextColor="#ffffff"
+        />
 
         {/* Content Section */}
         <section className="py-24 px-4 md:px-12 max-w-7xl mx-auto">
