@@ -77,15 +77,40 @@ const HERO_SLIDES = [
 
 const HERO_CAROUSEL_IMAGES = [
   {
-    src: "/Dudhwa.JPG",
+    src: "/RDC.JPG",
     alt: "Elephants moving through Rajaji riverbed at dusk"
   },
   {
-    src: "/SafariLand.JPG",
+    src: "/RDC1.JPG",
+    alt: "Tiger habitat in the Terai landscape"
+  },
+  
+  {
+    src: "/RDC2.JPG",
+    alt: "Tiger habitat in the Terai landscape"
+  },
+  
+  {
+    src: "/RDC3.JPG",
+    alt: "Tiger habitat in the Terai landscape"
+  },
+  
+  {
+    src: "/RDC4.JPG",
+    alt: "Tiger habitat in the Terai landscape"
+  },
+  
+  {
+    src: "/RDC4.JPG",
+    alt: "Tiger habitat in the Terai landscape"
+  },
+  
+  {
+    src: "/RDC5.JPG",
     alt: "Tiger habitat in the Terai landscape"
   },
   {
-    src: "/Safari2.JPG",
+    src: "/RDC6.JPG",
     alt: "Predator silhouette in golden light"
   }
 ];
@@ -188,11 +213,11 @@ export default function SafariPackageOnePage() {
               className="bg-gray-50 border border-black/5 rounded-sm p-6 md:p-8 flex flex-col justify-between space-y-6"
             >
               <div className="space-y-4">
-                <h2 className="text-2xl md:text-3xl font-serif text-black">
+                <h2 className="text-2xl md:text-3xl font-serif bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent">
                   Begin the Quiet Arts
                 </h2>
                 <p className="text-base md:text-lg font-light text-gray-700">
-                  Share how you&apos;d like to connect for this circuit and I&apos;ll follow up with details, timings, and next steps.
+                  Please fill out this form to get in touch with us. We usually respond with an itinerary within 48 hours.
                 </p>
               </div>
 
@@ -214,6 +239,15 @@ export default function SafariPackageOnePage() {
                   <input
                     type="email"
                     required
+                    className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">
+                    Preferred date
+                  </label>
+                  <input
+                    type="date"
                     className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
                   />
                 </div>
