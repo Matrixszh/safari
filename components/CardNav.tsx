@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
+import Link from 'next/link';
 
 type CardNavLink = {
   label: string;
@@ -201,9 +202,9 @@ const CardNav: React.FC<CardNavProps> = ({
             />
           </div>
 
-          <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
+          <Link href="/" className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
             <img src={logo} alt={logoAlt} className="logo h-[34px]" />
-          </div>
+          </Link>
 
           <button
             type="button"

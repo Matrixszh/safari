@@ -31,7 +31,7 @@ export default function BottomNav({ openDirection = "up", variant = "default" }:
       name: "WORKS", 
       href: "/work", 
       image: "/workshero.JPG",
-      desc: "Get in touch"
+      desc: "Art visualised"
     },
     { 
       name: "SAFARI", 
