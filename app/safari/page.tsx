@@ -122,10 +122,10 @@ export default function Safari() {
               Safari with Nouman
             </h1>
             <p className="mt-8 text-lg md:text-xl font-light leading-relaxed text-gray-800">
-              Join Syed For A Transition From Mere Sightings To Disciplined Fieldcraft. These Safaris Are Curated For Those Seeking More Than A Checklist; Focusing On Precision Tracking, Calculus Of Light, And The Patience Required To Witness Moments In Their Rawest Form.
+              Join Syed for a transition from mere sightings to disciplined fieldcraft. These safaris are curated for those seeking more than a checklist; focusing on precision tracking, calculus of light, and the patience required to witness moments in their rawest form.
             </p>
             <p className="mt-6 text-lg md:text-xl font-light leading-relaxed text-gray-800">
-              Whether You Are Behind A Lens Or On A Leisure Journey To Witness The Wild&apos;s True Rhythm, The Focus Remains The Same: Elite Positioning And Deep Immersion.
+              Whether you are behind a lens or on a leisure journey to witness the wild&apos;s true rhythm, the focus remains the same: elite positioning and deep immersion.
             </p>
           </section>
 
