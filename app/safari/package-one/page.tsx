@@ -101,11 +101,6 @@ const HERO_CAROUSEL_IMAGES = [
   },
   
   {
-    src: "/RDC4.JPG",
-    alt: "Tiger habitat in the Terai landscape"
-  },
-  
-  {
     src: "/RDC5.JPG",
     alt: "Tiger habitat in the Terai landscape"
   },
