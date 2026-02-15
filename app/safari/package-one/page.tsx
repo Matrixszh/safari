@@ -1,8 +1,8 @@
- "use client";
+"use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ReactLenis } from "lenis/react";
 import CardNav, { CardNavItem } from "../../../components/CardNav";
 
@@ -63,8 +63,43 @@ const navItems: CardNavItem[] = [
   }
 ];
 
+const HERO_SLIDES = [
+  {
+    src: "/Dudhwa.JPG",
+    alt: "Rajaji Tiger Reserve terrain at dusk"
+  },
+  {
+    src: "/SafariLand.JPG",
+    alt: "Dudhwa Tiger Reserve landscape in golden light"
+  }
+];
+
+const HERO_CAROUSEL_IMAGES = [
+  {
+    src: "/Dudhwa.JPG",
+    alt: "Elephants moving through Rajaji riverbed at dusk"
+  },
+  {
+    src: "/SafariLand.JPG",
+    alt: "Tiger habitat in the Terai landscape"
+  },
+  {
+    src: "/Safari2.JPG",
+    alt: "Predator silhouette in golden light"
+  }
+];
+
 export default function SafariPackageOnePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,7 +109,7 @@ export default function SafariPackageOnePage() {
 
   return (
     <ReactLenis root>
-      <main className="pt-5 bg-white min-h-screen text-black font-sans overflow-x-hidden">
+      <main className="pt-5 bg-gray-100 min-h-screen text-black font-sans overflow-x-hidden">
         <CardNav
           logo="/logo.png"
           logoAlt="Syed Nouman"
@@ -85,83 +120,80 @@ export default function SafariPackageOnePage() {
           buttonTextColor="#ffffff"
         />
 
-        <section className="relative w-full bg-black text-white">
-          <div className="max-w-6xl mx-auto px-4 md:px-12 py-16 md:py-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div className="space-y-6">
-                <span className="text-xs tracking-[0.3em] uppercase text-[#F7E07E]">
-                  Safari Package
-                </span>
-                <h1 className="text-4xl md:text-6xl font-serif leading-tight">
-                  Terai Predator Circuit
-                </h1>
-                <p className="text-lg md:text-xl font-light text-gray-200">
-                  A focused journey into North India&apos;s predator heartlands, designed for guests who want intention behind every drive and every frame.
-                </p>
-              </div>
-              <div className="relative h-64 md:h-80 w-full rounded-sm overflow-hidden">
+        <section className="relative w-full min-h-[80vh] md:min-h-screen text-white">
+          <div className="absolute inset-0">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={heroIndex}
+                className="absolute inset-0"
+                initial={{ opacity: 0, scale: 1.03, x: 40 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.98, x: -40 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+              >
                 <Image
-                  src="/SafariLand.JPG"
-                  alt="Terai predator landscape"
+                  src={HERO_SLIDES[heroIndex].src}
+                  alt={HERO_SLIDES[heroIndex].alt}
                   fill
                   className="object-cover"
                 />
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/10" />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-10">
+            {HERO_SLIDES.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setHeroIndex(index)}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  index === heroIndex
+                    ? "w-10 bg-white"
+                    : "w-4 bg-white/40 hover:bg-white/80"
+                }`}
+                aria-label={`Go to hero slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 px-4 md:px-12 bg-gray-100 border-b border-black/5">
+          <div className="max-w-4xl mx-auto space-y-6">
+            <span className="text-xs tracking-[0.3em] uppercase text-[#D4AF37]">
+              Terai Predator Circuit
+            </span>
+            <h1 className="text-3xl md:text-5xl font-serif leading-tight text-black">
+              Rajaji &amp; Dudhwa
+            </h1>
+            <div className="space-y-5 text-lg md:text-xl font-light leading-relaxed text-gray-800">
+              <p>
+                Where the Shivaliks break, Rajaji Tiger Reserve emerges as a rugged corridor of dry deciduous forests and seasonal riverbeds. Defined by stone and silence, a landscape where migration paths of the Asian Elephants carve through the foothills of the North. Within these golden, dust-lit shadows, the leopards here find a fortress of rock and river.
+              </p>
+              <p>
+                The heart of all Sal, Dudhwa Tiger Reserve stands as a massive, ancient expanse of the Terai’s alluvial landscape. Defined by moisture and mystery, a place where the Himalayan foothills meet the swamps, creating a permanent, ethereal haze. Within these deep indigo shadows, the giants of the subcontinent move undisturbed. A stronghold for the apex predators. These two reserves form the ultimate stage for the Quiet Arts.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-4 md:px-12 max-w-5xl mx-auto space-y-12">
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-serif text-black">
-              Introduction
-            </h2>
-            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
-              This itinerary is for travellers who want to move past checklist sightings and into a slower, more intentional rhythm with the forest. The focus is on building context around each sighting: understanding territories, reading tracks, and learning how light and topography shape the final image.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-serif text-black">
-              What these parks have to offer
-            </h2>
-            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
-              The parks on this circuit hold dense sal forests, riverine belts, grasslands, and the transitional spaces in between. Expect a blend of apex predators, raptors, and quieter moments with ungulates and smaller life that complete the ecological story.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-serif text-black">
-              What I offer in this safari package
-            </h2>
-            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700">
-              Every drive is planned with a photographer&apos;s eye. We balance tracking opportunities with time spent holding a promising frame. You receive guidance on composition, timing, and on-field decision making so that each sighting has the best chance of becoming a finished photograph rather than a passing memory.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-20 px-4 md:px-12 bg-gray-50 border-t border-black/5">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <h2 className="text-3xl md:text-4xl font-serif text-black">
-                Register your interest
-              </h2>
-              <p className="text-lg font-light text-gray-700">
-                Share a few details below and I&apos;ll reach out with date options, park combinations, and next steps for this circuit.
-              </p>
-            </motion.div>
-
+        <section className="py-16 px-4 md:px-12 bg-gray-100 border-b border-black/5">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
             <form
               onSubmit={handleSubmit}
-              className="mt-10 grid grid-cols-1 gap-6"
+              className="bg-gray-50 border border-black/5 rounded-sm p-6 md:p-8 flex flex-col justify-between space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-serif text-black">
+                  Begin the Quiet Arts
+                </h2>
+                <p className="text-base md:text-lg font-light text-gray-700">
+                  Share how you&apos;d like to connect for this circuit and I&apos;ll follow up with details, timings, and next steps.
+                </p>
+              </div>
+
+              <div className="space-y-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
                     Name
@@ -182,28 +214,26 @@ export default function SafariPackageOnePage() {
                     className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
                   />
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
-                  Preferred dates or window
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
-                  placeholder="For example: Late November, or specific calendar dates"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
-                  Anything specific you are hoping to focus on
-                </label>
-                <textarea
-                  rows={4}
-                  className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent resize-none"
-                  placeholder="Photography goals, species you are drawn to, or special requirements."
-                />
+                <div className="flex items-start gap-3">
+                  <input
+                    id="connect-meeting"
+                    type="checkbox"
+                    className="mt-1 h-4 w-4 border-gray-300 text-black focus:ring-[#D4AF37]"
+                  />
+                  <label htmlFor="connect-meeting" className="text-sm md:text-base text-gray-700">
+                    Connect over a meeting
+                  </label>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">
+                    Additional comments
+                  </label>
+                  <textarea
+                    rows={4}
+                    className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent resize-none"
+                    placeholder="Share any context, preferences, or questions you have in mind."
+                  />
+                </div>
               </div>
 
               <div className="pt-2">
@@ -216,8 +246,67 @@ export default function SafariPackageOnePage() {
                 </button>
               </div>
             </form>
+
+            <div className="relative h-72 md:h-full min-h-[280px] rounded-sm overflow-hidden bg-black">
+              <Image
+                src={HERO_CAROUSEL_IMAGES[currentSlide].src}
+                alt={HERO_CAROUSEL_IMAGES[currentSlide].alt}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                <div className="text-xs md:text-sm text-white/80 tracking-[0.25em] uppercase">
+                  Hero Shot {currentSlide + 1} / {HERO_CAROUSEL_IMAGES.length}
+                </div>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCurrentSlide((prev) =>
+                        prev === 0 ? HERO_CAROUSEL_IMAGES.length - 1 : prev - 1
+                      )
+                    }
+                    className="h-8 w-8 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center text-xs transition-colors"
+                    aria-label="Previous hero image"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCurrentSlide((prev) =>
+                        (prev + 1) % HERO_CAROUSEL_IMAGES.length
+                      )
+                    }
+                    className="h-8 w-8 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center text-xs transition-colors"
+                    aria-label="Next hero image"
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+
+              <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                {HERO_CAROUSEL_IMAGES.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setCurrentSlide(index)}
+                    className={`h-1 rounded-full transition-all duration-300 ${
+                      index === currentSlide
+                        ? "w-8 bg-white"
+                        : "w-3 bg-white/40 hover:bg-white/70"
+                    }`}
+                    aria-label={`Go to hero image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
+
       </main>
     </ReactLenis>
   );
