@@ -224,7 +224,7 @@ export default function SafariPackageOnePage() {
                   Begin the Quiet Arts
                 </h2>
                 <p className="text-base md:text-lg font-light text-gray-700">
-                  Please fill out this form to get in touch with us. We usually respond with an itinerary within 48 hours.
+                  Please fill out this form to get in touch with us. We usually respond with an 8-day itinerary within 48 hours.
                 </p>
               </div>
 
@@ -299,13 +299,43 @@ export default function SafariPackageOnePage() {
               </div>
             </form>
 
-            <div className="relative h-120 md:h-full min-h-[280px] rounded-sm overflow-hidden bg-black">
-              <Image
-                src={HERO_CAROUSEL_IMAGES[currentSlide].src}
-                alt={HERO_CAROUSEL_IMAGES[currentSlide].alt}
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-150 md:h-full min-h-[280px] rounded-sm overflow-hidden bg-black">
+              <div className="absolute inset-0">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -40 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
+                    onDragEnd={(_, info) => {
+                      if (info.offset.x < -50) {
+                        setCurrentSlide((prev) =>
+                          (prev + 1) % HERO_CAROUSEL_IMAGES.length
+                        );
+                      } else if (info.offset.x > 50) {
+                        setCurrentSlide((prev) =>
+                          prev === 0
+                            ? HERO_CAROUSEL_IMAGES.length - 1
+                            : prev - 1
+                        );
+                      }
+                    }}
+                  >
+                    <Image
+                      src={HERO_CAROUSEL_IMAGES[currentSlide].src}
+                      alt={HERO_CAROUSEL_IMAGES[currentSlide].alt}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
 
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                 <div className="text-xs md:text-sm text-white/80 tracking-[0.25em] uppercase">
