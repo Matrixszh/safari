@@ -14,7 +14,7 @@ export default function Footer() {
               Syed Nouman
             </h2>
             <p className="text-gray-400 font-light text-lg max-w-md leading-relaxed">
-              Dedicated to wildlife conservation and storytelling .
+              Dedicated to wildlife conservation and storytelling.
             </p>
           </div>
 

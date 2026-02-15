@@ -42,14 +42,14 @@ const navItems: CardNavItem[] = [
         ariaLabel: "Go to safari page"
       },
       {
-        label: "Terai Predator Circuit",
+        label: "Rajaji & Dudhwa",
         href: "/safari/package-one",
-        ariaLabel: "View Terai Predator Circuit safari package"
+        ariaLabel: "View Rajaji and Dudhwa safari package"
       },
       {
-        label: "Rivers & Grasslands Route",
+        label: "Tadoba & Pench",
         href: "/safari/package-two",
-        ariaLabel: "View Rivers and Grasslands Route safari package"
+        ariaLabel: "View Tadoba and Pench safari package"
       }
     ]
   },
@@ -155,7 +155,6 @@ export default function SafariPackageOnePage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/10" />
               </motion.div>
             </AnimatePresence>
           </div>
