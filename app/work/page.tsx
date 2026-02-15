@@ -70,7 +70,7 @@ const chapters = [
     title: "Northern Cross Giants",
     description: "At fifteen months, the northern hybrid already towers over the queen who raised him. A testament to Siberian iron flowing through a Bengal heart amidst the Terai plains.",
     image: "/Chapter1.JPG", // Tiger/Elephant placeholder (using Tiger as safer bet for India context)
-    heightClass: "h-[100vh] md:h-[100vh]",
+    heightClass: "h-[30vh] md:h-[100vh]",
     widthClass: "w-full md:w-[80vw]"
   },
   {
@@ -78,7 +78,7 @@ const chapters = [
     title: "The Terai Throne",
     description: "A daughter of Kishanpur’s most iconic lineage, photographed pushing into uncharted territory. Perched on a sandhill like a makeshift throne, she isn’t just resting, she is claiming her future.",
     image: "/Chapter2.JPG", // Tiger on hill/rock
-    heightClass: "h-[50vh] md:h-[100vh]",
+    heightClass: "h-[80vh] md:h-[100vh]",
     widthClass: "w-full md:w-[40vw]"
   },
   {
@@ -94,7 +94,7 @@ const chapters = [
     title: "Delicate Wings, Endless Sky",
     description: "Precision frames of India’s most vibrant life.A flash of pigment in the canopy’s shade; The vibrant brushstrokes that time has made.",
     image: "/Chapter4.JPG", // Default/fallback
-    heightClass: "h-[60vh] md:h-[100vh]",
+    heightClass: "h-[80vh] md:h-[100vh]",
     widthClass: "w-full md:w-[40vw]",
     images: [
       "/Chapter4.JPG",
@@ -108,7 +108,7 @@ const chapters = [
     title: "The Blue Gray Hour",
     description: "An apex so absolute, she’s concealed in air.",
     image: "/Chapter5.JPG", // Bird
-    heightClass: "h-[55vh] md:h-[75vh]",
+    heightClass: "h-[30vh] md:h-[75vh]",
     widthClass: "w-full md:w-[85vw]"
   },
   {
@@ -116,7 +116,7 @@ const chapters = [
     title: " The Sylvan Veil",
     description: "Only like a quiet painting.",
     image: "/Chapter6.JPG", // Bird
-    heightClass: "h-[55vh] md:h-[75vh]",
+    heightClass: "h-[30vh] md:h-[75vh]",
     widthClass: "w-full md:w-[85vw]"
   }
 
