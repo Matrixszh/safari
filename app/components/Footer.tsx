@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="space-y-6">
             <h3 className="text-[#F7E07E] text-sm tracking-[0.2em] uppercase mb-4">Connect</h3>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-[#F7E07E] hover:text-[#F7E07E] transition-all duration-300">
+              <a href="https://www.instagram.com/nomaan.102?igsh=ZTF5a2k5OTlocXM4&utm_source=qr" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-[#F7E07E] hover:text-[#F7E07E] transition-all duration-300">
                 <Instagram className="w-4 h-4" />
               </a>
             

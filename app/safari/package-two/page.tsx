@@ -171,17 +171,14 @@ export default function SafariPackageTwoPage() {
         <section className="py-12 md:py-16 px-4 md:px-12 bg-gray-100 border-b border-black/5">
           <div className="max-w-4xl mx-auto space-y-6">
             <span className="text-xs tracking-[0.3em] uppercase text-[#D4AF37]">
-              Rivers &amp; Grasslands Route
+              the central highlands
             </span>
             <h1 className="text-3xl md:text-5xl font-serif leading-tight text-black">
-              The river edges &amp; open meadows
+              Tadoba &amp; Pench
             </h1>
             <div className="space-y-5 text-lg md:text-xl font-light leading-relaxed text-gray-800">
               <p>
-                This route is for guests who enjoy variation in mood and habitat. Instead of anchoring to a single landscape, we move through different zones so you experience how the same species behaves and appears in changing light and terrain.
-              </p>
-              <p>
-                Expect broad riverbeds, misty grasslands, and forest edges that attract both predators and prey. Morning and evening transitions are particularly rewarding here, with strong opportunities for silhouettes, backlit frames, and layered compositions.
+                Land of Teak and Tiger, Tadoba stands as a rugged stronghold of deciduous hills and expansive lakebeds. This sun-drenched terrain flows into the teak-canopied ridges of Pench; the legendary Satpura range. From high-contrast shadows to life-giving riverbanks, these reserves offer a masterclass in tracking through golden light and the iron-rich dust of India’s central heartland.
               </p>
             </div>
           </div>
