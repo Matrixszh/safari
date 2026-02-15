@@ -82,11 +82,6 @@ const TOPIC_2_IMAGES = [
     src: "/Safari2.4.JPG", 
     alt: "Safari Moment 4",
     settings: { iso: "100", aperture: "f/8.0", shutter: "1/500s" }
-  },
-  { 
-    src: "/Safari2.6.JPG", 
-    alt: "Safari Moment 6",
-    settings: { iso: "320", aperture: "f/5.6", shutter: "1/1600s" }
   }
 ];
 
@@ -137,7 +132,7 @@ export default function Safari() {
           <section className="pb-16 px-4 md:px-8 max-w-6xl mx-auto space-y-10">
             <article className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/SafariLand.JPG"
+                src="/Dudhwa.JPG"
                 alt="Rajaji and Dudhwa tiger walking on forest track"
                 fill
                 className="object-cover"
@@ -163,7 +158,7 @@ export default function Safari() {
 
             <article className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/Safari2.JPG"
+                src="/TPexplore.JPG"
                 alt="Tadoba and Pench tiger in blue forest light"
                 fill
                 className="object-cover"

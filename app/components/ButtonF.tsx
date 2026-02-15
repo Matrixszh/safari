@@ -13,7 +13,7 @@ interface ButtonCreativeRightProps {
 function ButtonCreativeRight({ label = 'About', href = '#', className = '' }: ButtonCreativeRightProps) {
   return (
     <Link href={href} className={className}>
-      <div className='group relative cursor-pointer p-2 w-38 border bg-white rounded-full overflow-hidden text-black text-center font-semibold shadow-sm hover:shadow-md transition-shadow duration-300'>
+      <div className='group relative cursor-pointer p-2 w-38 border bg-white rounded-full overflow-hidden text-black text-center font-semibold shadow-sm hover:shadow-md transition-shadow duration-300 scale-70 md:scale-100'>
         <span className='translate-x-1 group-hover:translate-x-12 group-hover:opacity-0 transition-all duration-300 inline-block'>
           {label}
         </span>
