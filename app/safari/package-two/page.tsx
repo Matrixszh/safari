@@ -219,7 +219,7 @@ export default function SafariPackageTwoPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    Anything specific you are hoping to focus on
+                    Additional Comments
                   </label>
                   <textarea
                     rows={4}
