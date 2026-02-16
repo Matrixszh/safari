@@ -64,10 +64,12 @@ const navItems: CardNavItem[] = [
 ];
 
 const HERO_CAROUSEL_IMAGES = [
-  {
-    src: "/TPC.JPG",
-    alt: "Riverbed track framed by trees"
+   {
+    src: "/TPL.JPG",
+    alt: "Predator silhouette in evening light"
   },
+  
+ 
   {
     src: "/TPC1.JPG",
     alt: "Open grassland with layered trees"
@@ -77,7 +79,10 @@ const HERO_CAROUSEL_IMAGES = [
     src: "/TPC2.JPG",
     alt: "Open grassland with layered trees"
   },
-  
+    {
+    src: "/TPC.JPG",
+    alt: "Riverbed track framed by trees"
+  },
   {
     src: "/TPC3.JPG",
     alt: "Open grassland with layered trees"
@@ -86,7 +91,7 @@ const HERO_CAROUSEL_IMAGES = [
     src: "/TPC4.JPG",
     alt: "Predator silhouette in evening light"
   },
-  
+ 
   {
     src: "/TPC5.JPG",
     alt: "Predator silhouette in evening light"

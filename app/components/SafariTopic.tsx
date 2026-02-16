@@ -62,7 +62,7 @@ export default function SafariTopic({ title, children, images, showCameraSetting
   };
 
   return (
-    <section className="w-full bg-gray-100 py-12 border-b border-y-amber-400 last:border-0">
+    <section className="w-full bg-gray-100 py-12 border-b border-y-[#D4AF37] last:border-0">
       <div className="max-w-7xl mx-auto px-4 md:px-24">
         
         {/* Content Section */}
@@ -109,9 +109,9 @@ export default function SafariTopic({ title, children, images, showCameraSetting
                    {/* Camera Settings Overlay */}
                    {showCameraSettings && (
                      <div className={`absolute bottom-6 right-6 flex items-end justify-end transition-all duration-500 ${activeSlide === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-                          <div className="bg-black/40 border border-[#F7E07E]/30 p-4 md:p-6 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          <div className="bg-black/40 border border-[#D4AF37]/30 p-4 md:p-6 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                               <div className="flex flex-col items-center gap-2">
-                                  <span className="text-[#F7E07E] text-xs uppercase tracking-[0.2em] mb-2">Camera Settings</span>
+                                  <span className="text-[#D4AF37] text-xs uppercase tracking-[0.2em] mb-2">Camera Settings</span>
                                   <div className="flex items-center gap-6 text-white font-light text-lg md:text-xl tracking-wide">
                                       <div className="flex flex-col items-center">
                                           <span className="text-white/50 text-[10px] uppercase tracking-widest mb-1">ISO</span>
