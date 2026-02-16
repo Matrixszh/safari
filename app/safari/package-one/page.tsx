@@ -118,7 +118,7 @@ export default function SafariPackageOnePage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 7000);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -326,7 +326,6 @@ export default function SafariPackageOnePage() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </motion.div>
                 </AnimatePresence>
               </div>

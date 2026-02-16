@@ -209,20 +209,15 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-8 text-lg font-light">
-                <div className="flex flex-col">
-                  <span className="text-[#D4AF37] text-xs uppercase tracking-widest mb-2">Email</span>
-                  <a href="mailto:hello@syednouman.com" className="hover:text-[#D4AF37] transition-colors">hello@syednouman.com</a>
-                </div>
+               
                 <div className="flex flex-col">
                   <span className="text-[#D4AF37] text-xs uppercase tracking-widest mb-2">Location</span>
-                  <span>Based in India • Available Worldwide</span>
+                  <span>Based in India • Telengana • Hyderabad</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[#D4AF37] text-xs uppercase tracking-widest mb-2">Socials</span>
                   <div className="flex gap-6">
-                    <a href="#" className="hover:text-[#D4AF37] transition-colors">Instagram</a>
-                    <a href="#" className="hover:text-[#D4AF37] transition-colors">Twitter</a>
-                    <a href="#" className="hover:text-[#D4AF37] transition-colors">LinkedIn</a>
+                    <a href="https://www.instagram.com/nomaan.102?igsh=ZTF5a2k5OTlocXM4&utm_source=qr" className="hover:text-[#D4AF37] transition-colors">Instagram</a>
                   </div>
                 </div>
               </div>
