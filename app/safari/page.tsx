@@ -140,7 +140,7 @@ export default function Safari() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-10">
                 <div className="space-y-3">
-                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#F7E07E] uppercase">
+                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#D4AF37] uppercase">
                     The Northern Strongholds
                   </span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
@@ -166,7 +166,7 @@ export default function Safari() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-between items-end p-8 md:p-10">
                 <div className="space-y-3 text-right">
-                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#F7E07E] uppercase">
+                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#D4AF37] uppercase">
                     The Central Highlands
                   </span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
@@ -190,16 +190,16 @@ export default function Safari() {
               showCameraSettings={false}
             >
               <ul className="space-y-6 text-left max-w-2xl mx-auto">
-                <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
-                  <strong className="text-[#F7E07E] text-xl tracking-wider">In-Depth Tracking</strong>
+                <li className="flex flex-col gap-1 border-l-2 border-[#D4AF37] pl-4">
+                  <strong className="text-[#D4AF37] text-xl tracking-wider">In-Depth Tracking</strong>
                   <span className="text-gray-800 text-lg font-light">We use years of field craft to track the region’s key species, focusing primarily on the apex predators.</span>
                 </li>
-                <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
-                  <strong className="text-[#F7E07E] text-xl tracking-wider">Ecosystem Perspective</strong>
+                <li className="flex flex-col gap-1 border-l-2 border-[#D4AF37] pl-4">
+                  <strong className="text-[#D4AF37] text-xl tracking-wider">Ecosystem Perspective</strong>
                   <span className="text-gray-800 text-lg font-light">We value every layer of the landscape, from raptors to the smaller details that complete a wilderness story.</span>
                 </li>
-                <li className="flex flex-col gap-1 border-l-2 border-[#F7E07E] pl-4">
-                  <strong className="text-[#F7E07E] text-xl tracking-wider">Strategic Positioning</strong>
+                <li className="flex flex-col gap-1 border-l-2 border-[#D4AF37] pl-4">
+                  <strong className="text-[#D4AF37] text-xl tracking-wider">Strategic Positioning</strong>
                   <span className="text-gray-800 text-lg font-light">Every sighting is approached with light and angles in mind for the optimal shot.</span>
                 </li>
               </ul>
@@ -213,11 +213,11 @@ export default function Safari() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div className="bg-gray-50 p-6 border border-black/5 rounded-sm shadow-sm">
-                  <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Private Vehicles</strong>
+                  <strong className="block text-[#D4AF37] text-2xl mb-2 tracking-wide">Private Vehicles</strong>
                   <span className="text-gray-800 text-lg font-light leading-relaxed">Your safari is custom-tailored to your pace. We don&apos;t rush sightings and prioritize quiet areas whenever possible.</span>
                 </div>
                 <div className="bg-gray-50 p-6 border border-black/5 rounded-sm shadow-sm">
-                  <strong className="block text-[#F7E07E] text-2xl mb-2 tracking-wide">Authenticity</strong>
+                  <strong className="block text-[#D4AF37] text-2xl mb-2 tracking-wide">Authenticity</strong>
                   <span className="text-gray-800 text-lg font-light leading-relaxed">No guarantees, just dedicated tracking and a commitment to being in the right place when the moment happens.</span>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function Safari() {
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
-                      <p>Because we were the only Gypsy and remained quiet, she emerged onto the path with total confidence. We were rewarded with a perfectly centered portrait, a clean shot in the signature blue Terai region.</p>
+                      <p>Because we were the only gypsy and remained quiet, she emerged onto the path with total confidence. We were rewarded with a perfectly centered portrait, a clean shot in the signature blue Terai region.</p>
                     </div>
                   </div>
                 </div>
@@ -281,7 +281,7 @@ export default function Safari() {
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
-                      <p>We were the first Gypsy on the scene, allowing us to capture clean images while others were still trailing behind us. This uncompromised positioning gave us the time and stillness to make beautiful, printable family portraits.</p>
+                      <p>We were the first gypsy on the scene, allowing us to capture clean images while others were still trailing behind us. This uncompromised positioning gave us the time and stillness to make beautiful, printable family portraits.</p>
                     </div>
                   </div>
                 </div>
@@ -313,7 +313,7 @@ export default function Safari() {
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>
-                      <p>First Gypsy on site. The calculation delivered an unobstructed flank shot, capturing the anatomical power and tricep definition of a male in his prime—details usually lost in the chaos of a chase.</p>
+                      <p>First gypsy on site. The calculation delivered an unobstructed flank shot, capturing the anatomical power and tricep definition of a male in his prime—details usually lost in the chaos of a chase.</p>
                     </div>
                   </div>
                 </div>
@@ -338,7 +338,7 @@ export default function Safari() {
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Positioning</strong>
-                      <p>We stayed back. By observing the play rhythm of the cubs, I predicted they would look for a higher vantage point to keep track of their mother. We positioned the Gypsy at a specific angle near a leaning branch, away from the crowd.</p>
+                      <p>We stayed back. By observing the play rhythm of the cubs, I predicted they would look for a higher vantage point to keep track of their mother. We positioned the gypsy at a specific angle near a leaning branch, away from the crowd.</p>
                     </div>
                     <div>
                       <strong className="text-[#D4AF37] block mb-2 uppercase tracking-widest text-sm">The Result</strong>

@@ -105,7 +105,7 @@ const chapters = [
   },
   {
     id: "V",
-    title: "The Blue Gray Hour",
+    title: "The Blue-Gray Hour",
     description: "An apex so absolute, she’s concealed in air.",
     image: "/Chapter5.JPG", // Bird
     heightClass: "h-[30vh] md:h-[75vh]",
@@ -201,7 +201,7 @@ function ChapterItem({ chapter, index }: { chapter: any; index: number }) {
             {chapter.title}
           </h2>
           <div className="h-1 w-24 bg-[#D4AF37] mb-8 mx-auto" />
-          <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-600">
+          <p className="text-lg md:text-2xl font-light leading-relaxed text-gray-600">
             {chapter.description}
           </p>
         </motion.div>
