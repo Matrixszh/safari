@@ -165,7 +165,7 @@ export default function SafariPackageTwoPage() {
                   Begin the Quiet Arts
                 </h2>
                 <p className="text-base md:text-lg font-light text-gray-700">
-                  Please fill out this form to get in touch with us. We usually respond with an itinerary within 48 hours.
+                  Please fill out this form to get in touch with us. We usually respond with an 8-day itinerary within 48 hours.
                 </p>
               </div>
 

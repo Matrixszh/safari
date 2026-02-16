@@ -48,10 +48,6 @@ export default function Footer() {
               <a href="https://www.instagram.com/nomaan.102?igsh=ZTF5a2k5OTlocXM4&utm_source=qr" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-[#F7E07E] hover:text-[#F7E07E] transition-all duration-300">
                 <Instagram className="w-4 h-4" />
               </a>
-            
-              <a href="mailto:hello@syednouman.com" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-[#F7E07E] hover:text-[#F7E07E] transition-all duration-300">
-                <Mail className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </div>
