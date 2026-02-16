@@ -159,7 +159,7 @@ const CardNav: React.FC<CardNavProps> = ({
   const getCardImage = (label: string) => {
     switch (label) {
       case 'Home':
-        return '/Chapter6.JPG';
+        return '/heroland.JPG';
       case 'About':
         return '/About.JPG';
       case 'Works':
@@ -167,7 +167,7 @@ const CardNav: React.FC<CardNavProps> = ({
       case 'Safari':
         return '/SafariLand.JPG';
       case 'Contact':
-        return '/Safari2.JPG';
+        return '/Strategic3.JPG';
       default:
         return '/SafariLand.JPG';
     }
