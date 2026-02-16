@@ -224,7 +224,7 @@ export default function SafariPackageTwoPage() {
                   <textarea
                     rows={4}
                     className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent resize-none"
-                    placeholder="Species, photographic themes, or any accessibility considerations."
+                    placeholder="Share any context, preferences, or questions you have in mind."
                   />
                 </div>
               </div>
@@ -240,7 +240,7 @@ export default function SafariPackageTwoPage() {
               </div>
             </form>
 
-            <div className="relative h-120 md:h-full min-h-[280px] rounded-sm overflow-hidden bg-black">
+            <div className="relative h-150 md:h-full min-h-[280px] rounded-sm overflow-hidden bg-black">
               <div className="absolute inset-0">
                 <AnimatePresence mode="wait">
                   <motion.div
