@@ -109,7 +109,7 @@ export default function SafariTopic({ title, children, images, showCameraSetting
                    {/* Camera Settings Overlay */}
                    {showCameraSettings && (
                      <div className={`absolute bottom-6 right-6 flex items-end justify-end transition-all duration-500 ${activeSlide === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-                          <div className="bg-black/40 border border-[#D4AF37]/30 p-4 md:p-6 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          <div className="bg-black/40 border border-[#D4AF37] p-4 md:p-6 rounded-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                               <div className="flex flex-col items-center gap-2">
                                   <span className="text-[#D4AF37] text-xs uppercase tracking-[0.2em] mb-2">Camera Settings</span>
                                   <div className="flex items-center gap-6 text-white font-light text-lg md:text-xl tracking-wide">
@@ -166,7 +166,7 @@ export default function SafariTopic({ title, children, images, showCameraSetting
                 key={index}
                 onClick={() => emblaApi && emblaApi.scrollTo(index)}
                 className={`group relative h-1 transition-all duration-500 ${
-                  index === selectedIndex ? "w-16 bg-[#F7E07E]" : "w-8 bg-black/20 hover:bg-black/40"
+                  index === selectedIndex ? "w-16 bg-[#D4AF37]" : "w-8 bg-black/20 hover:bg-black/40"
                 }`}
               />
             ))}

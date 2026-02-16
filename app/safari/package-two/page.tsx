@@ -65,7 +65,7 @@ const navItems: CardNavItem[] = [
 
 const HERO_CAROUSEL_IMAGES = [
    {
-    src: "/TPL.JPG",
+    src: "/TPL2.JPG",
     alt: "Predator silhouette in evening light"
   },
   

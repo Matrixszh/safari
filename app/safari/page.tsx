@@ -130,57 +130,59 @@ export default function Safari() {
           </section>
 
           <section className="pb-16 px-4 md:px-8 max-w-6xl mx-auto space-y-10">
-            <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/RDExplore.JPG"
-                alt="Rajaji and Dudhwa tiger walking on forest track"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-10">
-                <div className="space-y-3">
-                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#D4AF37] uppercase">
-                    The Northern Strongholds
-                  </span>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
-                    Rajaji &amp; Dudhwa
-                  </h2>
+            <div className="group rounded-xl p-[2px] bg-transparent transition-[background,box-shadow,transform] duration-500 ease-out hover:bg-gradient-to-r hover:from-[#F7E07E] hover:via-[#D4AF37] hover:to-[rgb(140,109,31)] hover:shadow-[0_0_24px_rgba(212,175,55,0.45)]">
+              <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-[0.9rem] overflow-hidden shadow-lg transform transition-transform duration-500 ease-out border border-transparent group-hover:scale-[1.02] group-hover:border-[#D4AF37]">
+                <Image
+                  src="/RDExplore.JPG"
+                  alt="Rajaji and Dudhwa tiger walking on forest track"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-10">
+                  <div className="space-y-3">
+                    <span className="text-xs md:text-sm tracking-[0.35em] text-[#D4AF37] uppercase">
+                      The Northern Strongholds
+                    </span>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
+                      Rajaji &amp; Dudhwa
+                    </h2>
+                  </div>
+                  <div>
+                    <ButtonCreativeRight
+                      label="Explore"
+                      href="/safari/package-one"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <ButtonCreativeRight
-                    label="Explore"
-                    href="/safari/package-one"
-                  />
-                </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
-            <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/TPexplore.JPG"
-                alt="Tadoba and Pench tiger in blue forest light"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-between items-end p-8 md:p-10">
-                <div className="space-y-3 text-right">
-                  <span className="text-xs md:text-sm tracking-[0.35em] text-[#D4AF37] uppercase">
-                    The Central Highlands
-                  </span>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
-                    Tadoba &amp; Pench
-                  </h2>
+            <div className="group rounded-xl p-[2px] bg-transparent transition-[background,box-shadow,transform] duration-500 ease-out hover:bg-gradient-to-r hover:from-[#F7E07E] hover:via-[#D4AF37] hover:to-[rgb(140,109,31)] hover:shadow-[0_0_24px_rgba(212,175,55,0.45)]">
+              <article className="relative w-full h-64 md:h-80 lg:h-115 rounded-[0.9rem] overflow-hidden shadow-lg transform transition-transform duration-500 ease-out border border-transparent group-hover:scale-[1.02] group-hover:border-[#D4AF37]">
+                <Image
+                  src="/TPexplore.JPG"
+                  alt="Tadoba and Pench tiger in blue forest light"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 flex flex-col justify-between items-end p-8 md:p-10">
+                  <div className="space-y-3 text-right">
+                    <span className="text-xs md:text-sm tracking-[0.35em] text-[#D4AF37] uppercase">
+                      The Central Highlands
+                    </span>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">
+                      Tadoba &amp; Pench
+                    </h2>
+                  </div>
+                  <div>
+                    <ButtonCreativeRight
+                      label="Explore"
+                      href="/safari/package-two"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <ButtonCreativeRight
-                    label="Explore"
-                    href="/safari/package-two"
-                  />
-                </div>
-              </div>
-            </article>
+              </article>
+            </div>
           </section>
 
           <div className="flex flex-col bg-gray-100">
