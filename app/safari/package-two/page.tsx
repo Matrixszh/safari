@@ -116,7 +116,7 @@ export default function SafariPackageTwoPage() {
         <section className="relative w-full min-h-[50vh] md:min-h-screen text-white">
           <div className="absolute inset-0">
             <Image
-              src="/HEROLAND3.JPG"
+              src="/heroland3.JPG"
               alt="Riverine grassland safari"
               fill
               className="object-cover"
