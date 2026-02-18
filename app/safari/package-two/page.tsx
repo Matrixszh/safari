@@ -141,9 +141,37 @@ export default function SafariPackageTwoPage() {
             />
           </div>
 
+          <div className="absolute bottom-10 left-0 right-0 flex justify-center z-10">
+            <motion.a
+              href="#package-two-intro"
+              className="text-[10px] tracking-[0.3em] uppercase"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.span
+                animate={{
+                  color: [
+                    "rgba(255,255,255,0.4)",
+                    "rgba(252,211,77,1)",
+                    "rgba(255,255,255,0.4)"
+                  ]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                Scroll
+              </motion.span>
+            </motion.a>
+          </div>
+
         </section>
 
-        <section className="py-12 md:py-16 px-4 md:px-12 bg-gray-100 border-b border-black/5">
+        <section id="package-two-intro" className="py-12 md:py-16 px-4 md:px-12 bg-gray-100 border-b border-black/5">
           <div className="max-w-4xl mx-auto space-y-6">
             <span className="text-xs tracking-[0.3em] uppercase text-[#D4AF37]">
               the central highlands
