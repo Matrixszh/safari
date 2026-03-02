@@ -109,7 +109,7 @@ export default function ThankYouPage() {
 
             {/* Subtext */}
             <p className="font-sans text-lg md:text-xl text-gray-600 max-w-lg mx-auto leading-relaxed">
-              We have received your enquiry and will get back to you shortly. Get ready for an unforgettable journey into the wild.
+              We have received your enquiry and will get back to you shortly. 
             </p>
 
             {/* Action Button */}
