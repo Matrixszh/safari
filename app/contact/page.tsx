@@ -1,6 +1,7 @@
  "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
@@ -66,6 +67,7 @@ const navItems: CardNavItem[] = [
 ];
 
 export default function ContactPage() {
+  const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -107,27 +109,28 @@ export default function ContactPage() {
 
     try {
       await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          dates: formData.preferredDates,
-          meeting_request: formData.connectOverMeeting ? "Yes" : "No",
-          focus_areas: formData.focus.join(", "),
-        },
-        PUBLIC_KEY
-      );
-      
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        preferredDates: "",
-        connectOverMeeting: false,
-        focus: []
-      });
-    } catch (error) {
+              SERVICE_ID,
+              TEMPLATE_ID,
+              {
+                from_name: formData.name,
+                from_email: formData.email,
+                dates: formData.preferredDates,
+                meeting_request: formData.connectOverMeeting ? "Yes" : "No",
+                focus_areas: formData.focus.join(", "),
+              },
+              PUBLIC_KEY
+            );
+            
+            setSubmitStatus("success");
+            setFormData({
+              name: "",
+              email: "",
+              preferredDates: "",
+              connectOverMeeting: false,
+              focus: []
+            });
+            router.push("/thank-you");
+          } catch (error) {
       console.error("Failed to send email:", error);
       setSubmitStatus("error");
     } finally {

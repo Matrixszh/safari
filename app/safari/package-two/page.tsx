@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactLenis } from "lenis/react";
@@ -100,6 +101,7 @@ const HERO_CAROUSEL_IMAGES = [
 ];
 
 export default function SafariPackageTwoPage() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -132,29 +134,30 @@ export default function SafariPackageTwoPage() {
 
     try {
       await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          package_name: "Tadoba & Pench",
-          from_name: formData.name,
-          from_email: formData.email,
-          date_start: formData.dateStart,
-          date_end: formData.dateEnd,
-          meeting_request: formData.connectOverMeeting ? "Yes" : "No",
-          additional_comments: formData.comments,
-        },
-        PUBLIC_KEY
-      );
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        dateStart: "",
-        dateEnd: "",
-        connectOverMeeting: false,
-        comments: ""
-      });
-    } catch (error) {
+              SERVICE_ID,
+              TEMPLATE_ID,
+              {
+                package_name: "Tadoba & Pench",
+                from_name: formData.name,
+                from_email: formData.email,
+                date_start: formData.dateStart,
+                date_end: formData.dateEnd,
+                meeting_request: formData.connectOverMeeting ? "Yes" : "No",
+                additional_comments: formData.comments,
+              },
+              PUBLIC_KEY
+            );
+            setSubmitStatus("success");
+            setFormData({
+              name: "",
+              email: "",
+              dateStart: "",
+              dateEnd: "",
+              connectOverMeeting: false,
+              comments: ""
+            });
+            router.push("/thank-you");
+          } catch (error) {
       console.error("Failed to send email:", error);
       setSubmitStatus("error");
     } finally {
