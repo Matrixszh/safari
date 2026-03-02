@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactLenis } from "lenis/react";
 import CardNav, { CardNavItem } from "../../../components/CardNav";
+import emailjs from "@emailjs/browser";
 
 const navItems: CardNavItem[] = [
   {
@@ -112,8 +113,18 @@ const HERO_CAROUSEL_IMAGES = [
 
 export default function SafariPackageOnePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [heroIndex, setHeroIndex] = useState(0);
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    dateStart: "",
+    dateEnd: "",
+    connectOverMeeting: false,
+    comments: ""
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -129,10 +140,46 @@ export default function SafariPackageOnePage() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => setIsSubmitting(false), 800);
+    setSubmitStatus("idle");
+
+    // Replace with your EmailJS credentials
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_PACKAGE || "";
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          package_name: "Rajaji & Dudhwa",
+          from_name: formData.name,
+          from_email: formData.email,
+          date_start: formData.dateStart,
+          date_end: formData.dateEnd,
+          meeting_request: formData.connectOverMeeting ? "Yes" : "No",
+          additional_comments: formData.comments,
+        },
+        PUBLIC_KEY
+      );
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        dateStart: "",
+        dateEnd: "",
+        connectOverMeeting: false,
+        comments: ""
+      });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -258,6 +305,8 @@ export default function SafariPackageOnePage() {
                   <input
                     type="text"
                     required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
                   />
                 </div>
@@ -268,6 +317,8 @@ export default function SafariPackageOnePage() {
                   <input
                     type="email"
                     required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
                   />
                 </div>
@@ -279,11 +330,15 @@ export default function SafariPackageOnePage() {
                     <input
                       type="date"
                       aria-label="Preferred start date"
+                      value={formData.dateStart}
+                      onChange={(e) => setFormData({ ...formData, dateStart: e.target.value })}
                       className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
                     />
                     <input
                       type="date"
                       aria-label="Preferred end date"
+                      value={formData.dateEnd}
+                      onChange={(e) => setFormData({ ...formData, dateEnd: e.target.value })}
                       className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
                     />
                   </div>
@@ -292,6 +347,8 @@ export default function SafariPackageOnePage() {
                   <input
                     id="connect-meeting"
                     type="checkbox"
+                    checked={formData.connectOverMeeting}
+                    onChange={(e) => setFormData({ ...formData, connectOverMeeting: e.target.checked })}
                     className="mt-1 h-4 w-4 border-gray-300 text-black focus:ring-[#D4AF37]"
                   />
                   <label htmlFor="connect-meeting" className="text-sm md:text-base text-gray-700">
@@ -304,6 +361,8 @@ export default function SafariPackageOnePage() {
                   </label>
                   <textarea
                     rows={4}
+                    value={formData.comments}
+                    onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
                     className="w-full border border-gray-300 rounded-sm px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent resize-none"
                     placeholder="Share any context, preferences, or questions you have in mind."
                   />
@@ -314,10 +373,16 @@ export default function SafariPackageOnePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center px-8 py-3 rounded-sm bg-black text-white text-sm md:text-base tracking-[0.2em] uppercase hover:bg-[#D4AF37] hover:text-black transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center px-8 py-3 rounded-sm bg-black text-white text-sm md:text-base tracking-[0.2em] uppercase hover:bg-[#D4AF37] hover:text-black transition-colors disabled:opacity-60 disabled:cursor-not-allowed w-full"
                 >
                   {isSubmitting ? "Sending..." : "Submit enquiry"}
                 </button>
+                {submitStatus === "success" && (
+                  <p className="text-green-600 text-center text-sm mt-4">Enquiry sent successfully! We'll be in touch soon.</p>
+                )}
+                {submitStatus === "error" && (
+                  <p className="text-red-600 text-center text-sm mt-4">Something went wrong. Please try again later.</p>
+                )}
               </div>
             </form>
 

@@ -101,13 +101,11 @@ export default function ContactPage() {
 
     // Replace these with your actual EmailJS credentials
     // You need to create an account at https://www.emailjs.com/
-    const SERVICE_ID = "YOUR_SERVICE_ID";
-    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-    const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT || "";
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
 
     try {
-      // In a real scenario with valid credentials, you would uncomment this:
-      /*
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -120,10 +118,6 @@ export default function ContactPage() {
         },
         PUBLIC_KEY
       );
-      */
-      
-      // Simulating network request for now since credentials are placeholders
-      await new Promise(resolve => setTimeout(resolve, 1500));
       
       setSubmitStatus("success");
       setFormData({
