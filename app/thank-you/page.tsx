@@ -67,18 +67,9 @@ const navItems: CardNavItem[] = [
 export default function ThankYouPage() {
   return (
     <ReactLenis root>
-      {/* Google Conversion Tracking */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=AW-17962473688"
-      />
-      <Script id="google-conversion-tag">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-17962473688');
-        `}
+      {/* Google Conversion Tracking Event */}
+      <Script id="google-conversion-event">
+        {`gtag('event', 'conversion', {'send_to': 'AW-17962473688/yxFXCOmuy4EcENixlvVC'});`}
       </Script>
 
       <div className="min-h-screen bg-[#F5F5F0] flex flex-col">
@@ -108,7 +99,7 @@ export default function ThankYouPage() {
             </h1>
 
             {/* Subtext */}
-            <p className="font-sans text-lg md:text-xl text-gray-600 max-w-lg mx-auto leading-relaxed">
+            <p className="font-sans text-lg md:text-lg text-gray-600 max-w-lg mx-auto leading-relaxed">
               We have received your enquiry and will get back to you shortly. 
             </p>
 

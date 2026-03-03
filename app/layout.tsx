@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 import ClientLayout from "./ClientLayout";
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -35,6 +36,18 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${cinzel.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17962473688"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17962473688');
+          `}
+        </Script>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
