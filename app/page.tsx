@@ -53,7 +53,7 @@ export default function Home() {
           className="max-w-8xl mx-auto text-center space-y-12"
         >
           <p className="text-lg md:text-2xl lg:text-2xl font-light leading-relaxed bg-gradient-to-b from-[#F7E07E] via-[#D4AF37] to-[rgb(140,109,31)] bg-clip-text text-transparent ">
-            Explore how Syed Nouman’s love for childhood wildlife transitioned into professional art.
+            Explore how Syed Nouman’s childhood love for wildlife transitioned into professional art.
           </p>
           
           <div className="flex justify-center">
